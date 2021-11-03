@@ -2,10 +2,9 @@
 toc: true
 layout: post
 description: A holistic approach to the implementation of an AppSec program
-categories: [markdown]
+categories: [security, software, devops, devsecops]
 title: Scaling up AppSec within your Enterprise
 ---
-# Scaling up AppSec within your Enterprise
 ### A holistic approach to the implementation of an AppSec program
 
 
@@ -16,6 +15,8 @@ The Standard Secure Software Development Lifecycle (SSDLC) ProcessNowadays ente
 Nevertheless, due to a number of factors, the AppSec teams, services and budget have not changed significantly over the last years. So it's important to understand how to scale up the AppSec services such that the AppSec team can keep up with the fast-paced software development inherent to the DevOps way of working.
 
 ![Secure Software Development Lifecycle Process](../images/scaling-up-appsec/ssdlc.png)
+![]({{ site.baseurl }}/../images/scaling-up-appsec/ssdlc.png "Secure Software Development Lifecycle Process")
+
 
 *In this post I address this topic, by describing the main elements that are part of the AppSec ecosystem and how a scalable AppSec program could look like.*
 
@@ -142,14 +143,14 @@ Summarising, having the AppSec team engaging solely with the DevOps teams is not
 
 ---
 
-##Additional remarks
+## Additional remarks
 Through out this post I'm mostly focused in DevOps, but that doesn't mean that the ideas presented here are not extensible to other development methodologies. I do believe in the DevOps fundamental principles and believe that they can help improve the overall quality of software systems. But, I'm not very enthusiastic with the term DevSecOps. I only use it through this post to keep things simpler and more relatable to the common terminology used these days in the IT security.
 
 Additionally, I consider privacy an extension of security. Privacy is not security, but without information security, you can't implement privacy. Despite privacy engineering is still in its infancy, most of the ideas described in this post are directly applicable to a software methodology that considers privacy by design and by default. In fact, these ideas might be even extended to other software quality properties, like maintainability, performance, etc.
 
 ---
 
-##Acknowledgements
+## Acknowledgements
 I certainly wouldn't have written this post in the same way if hadn't experienced first had how policies, standards, reference and future state architectures are important for an organisation. So thanks Jacek Offierski for mentoring and pushing me in that direction.
 
 Also, I wouldn't have such a holistic approach to security and software development if it wouldn't the amazing discussions and talks I have with Martijn Klingens and Bernard Knaapen. So again thanks guys, for pushing me to always think outside of the box.
