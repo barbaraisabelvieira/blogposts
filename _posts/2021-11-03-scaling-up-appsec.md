@@ -3,12 +3,10 @@ toc: true
 layout: post
 description: A holistic approach to the implementation of an AppSec program
 categories: [markdown]
-title: caling up AppSec within your Enterprise
+title: Scaling up AppSec within your Enterprise
 ---
-
-
-#Scaling up AppSec within your Enterprise
-###A holistic approach to the implementation of an AppSec program
+# Scaling up AppSec within your Enterprise
+### A holistic approach to the implementation of an AppSec program
 
 
 The Standard Secure Software Development Lifecycle (SSDLC) ProcessNowadays enterprises that are going through a digital transformation are more and more concerned with improving their security practices. This is because:
@@ -23,7 +21,7 @@ Nevertheless, due to a number of factors, the AppSec teams, services and budget 
 
 ---
 
-##DevSecOps
+## DevSecOps
 The standard Secure Software Development Lifecycle (SSDLC) process has gone through several iterations over the past years. Mostly, the phases of the process had not changed significantly, but instead, these phases tried to adapt to the different development methodologies. If we consider the most popular and adopted software engineering methodologies, SSDLC started with being Waterfall, then adapted itself to Agile development and now DevOps, with DevSecOps.
 
 DevSecOps means building security into application development from end-to-end. DevOps teams should automate security to protect the overall environment and data (see RedHat description of DevSecOps here). However, this is far from being an easy task:
@@ -40,7 +38,7 @@ DevSecOps is mainly focused on adding automated tooling to CI/CD pipelines to de
 Keep in mind that the ultimate goal of the AppSec team should be enabling DevOps teams to autonomously drive and implement security in a mature way. So let's start with the foundations. Let's start by setting up the baseline policies and standards for your organisation that meet compliance requirements and are in-line with security best practices. Deriving policies and standards requires taking into account the enterprise architecture of the organisation, the nature of your applications, the IT strategy (including target technology stack and implementation strategy), compliance and legal requirements, the risk appetite of the organisation (which relates to type of industry and the type of data being processed), costs and budget, and the organisation culture.
 
 
-##Baseline Policies and Standards
+## Baseline Policies and Standards
 A strong governance approach starts with the definition with policies and standards that utilises an integrated approach to manage requirements. If you don't know the difference between polices and standards you can check it here.
 
 Policies are enforced by standards. Standards establish the minimum security requirements that ensure that systems, applications and processes are designed and operated with the baseline security principles and protections. Without baseline security requirements to guide development teams on how security should be implemented in the applications, your AppSec team will be constantly overwhelmed and outnumbered. They will struggle so much with all the questions regarding with what's allowed or not, what's secure or not, that they won't be able to keep up and do the things that actually matter.
@@ -49,7 +47,7 @@ In principle, everyone within an enterprise should be responsible and accountabl
 
 In other for this to work, you must make sure the right procedures are implemented and that the adequate controls are in place. DevSecOps requires you to automate most of the procedures and controls (through compliance as code), so if you have well-defined baseline policies and standards, everything else will follow.
 
-##An Enterprise Security Architecture
+## An Enterprise Security Architecture
 You can't scale up your AppSec services, if you don't have proper enterprise security services in place. The more the company grows, the more teams have the need to re-use security services in an integrated way.
 
 For instance, all applications must integrate with the enterprise Identity and Access Management (IAM) service that is centrally managed by the corresponding team. Applications that need to talk to each other, must authenticate via the enterprise IAM service. It's not feasible to have each team implementing and managing its own IAM service. When centralised IAM services are not easy to embedded into the applications (or do not exist), what most DevOps teams tend to do is to use (hardcoded, never rotated, low-entropy) API keys. The activity of having teams ex-changing API Keys (normally through email or SMS) is extremely dangerous and prone to attacks. Proper authentication and authorisation requires a good, well-integrated and easy to consume IAM service.
@@ -58,7 +56,7 @@ Another example are enterprise secret managers. These should also be centrally m
 
 The enterprise security architecture should be aligned with the polices and guide the definition of the security standards. In one of the enterprises where I worked at, we actually started by defining the (enterprise) future state or reference architecture for that particular security service, then derive the standard security requirements and only later, abstract them into policies that meet compliance and legal requirements, as well as, the risk appetite of the enterprise. This worked very well. Deriving policies is always a cumbersome task if you don't know the organisation and underlying application landscape, so following this workflow helps immensely to derive realistic and adequate policies and standards.
 
-##API-first security services
+## API-first security services
 To scale up the secure development, you need to make your (previously designed) enterprise security services easy to consume, preferable, in a way that DevOps teams put little, to no effort in integrate them into their applications. This standard way of (1) raising a support ticket every time you need to integrate the secret manager or key management service into your application, (2) go through a meeting, (3) fill in a form, (4) read a bunch of documents to understand how to do the integration and (5) wait hours or days until your request gets approved, will hinder the speed of your development process.
 
 So what should you do instead? Follow an API-driven approach such that all the services are directly accessible in the CI/CD pipeline. The teams can directly consume the services by directly calling the API or through pipeline extensions. For instance, every time a digital certificate is needed, instead of going through a lengthy and lagging manual process of obtaining a certificate from your external Certificate Authority, try instead to:
@@ -73,7 +71,7 @@ This means that steps such like: key-pair generation, key-algorithm, CSR extract
 This pattern of developing API-first security services that abstract away (needless-to-care) configuration details, helps improving the speed with what you can develop applications and enhances their security by design and by default. This vision and principle is applicable to all enterprise security services.
 So, when implementing DevSecOps, besides integrating the automated security scanners such as SAST, DAST, SCA, IAST, etc., into CI/CD pipelines, consider integrating the enterprise security services as well.
 
-##Security Dashboards
+## Security Dashboards
 Similarly to the security operations team with the usage of SIEM, the AppSec team shall also collect, aggregate and monitor all the security findings of all applications in the organisation. Whether these findings result from automated security scanners integrated in the pipelines, or manual security assessments, like penetration tests, it's important to have a holistic and centralised overview of the security posture of all applications.
 
 Directly relating the findings to particular assets, together with the criticality of the data being processed by the application and where these assets are located in the network, helps identifying and prioritising the risk of exposure to threats.
@@ -88,7 +86,7 @@ The centralised overview of security findings shall be used to identify general 
 **Understanding why** the security controls and requirements are not being implemented is much more important than going after each individual team and ask them to fix it. The AppSec team can't solve problems at scale, if they're not able to find their root cause in the first place.
 
 
-##The governance circles
+## The governance circles
 So far I talked about the importance of security policies and standards, of security enterprise architecture, of easy to consume (API-first) security services and of a centralised overview of security findings. But unfortunately, even if you put all these pieces together, you may still see minimal improvements in the security of the applications within your organisation. Therefore, a strong and effective information security governance is essential to make these pieces work altogether. A good governance resembles a maestro in an orchestra. If the maestro is not there to coordinate how the musicians play, certainly the orchestra will never play as harmoniously as you expect them to play.
 
 Governing the security of the applications must have management support, including, senior management, human resources, compliance, legal, audit, risk management and, of course, IT. Everyone within the organisation should be responsible and accountable for the security of the applications, therefore awareness about the risks, policies and individual roles is fundamental.
@@ -115,7 +113,7 @@ The risks and threats addressed in circle meetings at the highest levels should 
 
 The shape of these circles and the frequency with what these meetings happen is highly dependent on the organisational structure of your enterprise. Also, empowering the people with the right mindset is crucial to the success of this initiative. Making it practical, fun and valuable for the DevOps teams, as well as, having support and engagement of management, is key.
 
-##A continuous application security stack
+## A continuous application security stack
 The keyword in the DevOps world is "continuous": continuous integration, continuous delivery, continuous deployment, continuous monitoring. So you also need to build a continuous application security (as described by Tim Chase in his course). This means that you continuously need to implement security in your applications by building your own continuous application stack.
 
 
@@ -127,7 +125,7 @@ The manual assisted assessments like code reviews, penetration testing and so on
 
 One point that I have not described in depth is the importance of setting up a secure (cloud) computing platform. As described in the beginning of this post, with the massive adoption of public cloud environments and all the gazillions of possible configurations that cloud resources offer, it's really hard to securely configure and manage the cloud infrastructure. So, creating default (baseline) configurations of cloud resources with secure defaults, is essential to enable a secure platform in a fast paced DevOps environment. These can be available through configuration templates (stored in the central version control system where all the teams can contribute to) that implement reference implementations of the resources used within the organisation.
 
-##Conclusions
+## Conclusions
 In a nutshell, the picture below tries to summarise what is important to develop and scale up in an AppSec program, taking into account that the ultimate goal is to delivery valuable secure applications, faster. Therefore, it is very important to continuously monitor and improve all these layers to accommodate the fast-paced changes so intrinsic to the IT industry.
 
 
