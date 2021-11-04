@@ -4,8 +4,11 @@ layout: post
 description: A holistic approach to the implementation of an AppSec program
 categories: [security, software, devops, devsecops]
 title: Scaling up AppSec within your Enterprise
+image: images/scaling-up-appsec/ssdlc.png
+hide: false
+search_exclude: true
 ---
-### A holistic approach to the implementation of an AppSec program
+### Summary
 
 
 The Standard Secure Software Development Lifecycle (SSDLC) ProcessNowadays enterprises that are going through a digital transformation are more and more concerned with improving their security practices. This is because:
@@ -14,9 +17,9 @@ The Standard Secure Software Development Lifecycle (SSDLC) ProcessNowadays ente
 
 Nevertheless, due to a number of factors, the AppSec teams, services and budget have not changed significantly over the last years. So it's important to understand how to scale up the AppSec services such that the AppSec team can keep up with the fast-paced software development inherent to the DevOps way of working.
 
-![Secure Software Development Lifecycle Process](../images/scaling-up-appsec/ssdlc.png)
-![]({{ site.baseurl }}/../images/scaling-up-appsec/ssdlc.png "Secure Software Development Lifecycle Process")
+![]({{ site.baseurl}}/images/scaling-up-appsec/ssdlc.png "Secure Software Development Lifecycle Process")
 
+![Secure Software Development Lifecycle Process](../images/scaling-up-appsec/ssdlc.png)
 
 *In this post I address this topic, by describing the main elements that are part of the AppSec ecosystem and how a scalable AppSec program could look like.*
 
@@ -33,7 +36,7 @@ If we think that developing good quality software, fast, is already a laborious 
 
 Also, having each individual DevOps team automating security is not cost-effective. The cost can be colossal even, if we consider that each team uses a different CI/CD pipeline with different automated security tooling. When security services are not engineered and provided at an enterprise level, each DevOps team tends to reinvent the wheel and sometimes not doing it properly.
 
-###DevSecOps is not enough…
+### DevSecOps is not enough…
 DevSecOps is mainly focused on adding automated tooling to CI/CD pipelines to detect vulnerabilities earlier in the development process (the so-called shift-left). Despite agreeing that this brings an enormous benefit in terms of vulnerabilities detection at a faster pace, I also argue that this isn't enough. Throwing a lot of security scanners into CI/CD without any governance or guidance around how these findings should be addressed, only solves half of the problem. At the same time, I also believe that having a dedicated security engineer per DevOps team isn't a scalable approach. So, what's the solution then?
 
 Keep in mind that the ultimate goal of the AppSec team should be enabling DevOps teams to autonomously drive and implement security in a mature way. So let's start with the foundations. Let's start by setting up the baseline policies and standards for your organisation that meet compliance requirements and are in-line with security best practices. Deriving policies and standards requires taking into account the enterprise architecture of the organisation, the nature of your applications, the IT strategy (including target technology stack and implementation strategy), compliance and legal requirements, the risk appetite of the organisation (which relates to type of industry and the type of data being processed), costs and budget, and the organisation culture.
@@ -99,6 +102,9 @@ Let's consider a typical IT organisation that includes the following structure:
 1. DevOps teams consist of software engineers, software architect, lead engineer and the security champion (which is also a software engineer);
 2. Two or more DevOps teams are organised into several departments inserted into a particular business line; each department consists of department lead, security engineer lead and a lead architect (of the department);
 
+
+![]({{ site.baseurl}}/images/scaling-up-appsec/governance-circles.png "The structure of the Governance circles")
+
 ![Structure of the Governance circles](../images/scaling-up-appsec/governance-circles.png)
 
 
@@ -117,8 +123,11 @@ The shape of these circles and the frequency with what these meetings happen is 
 ## A continuous application security stack
 The keyword in the DevOps world is "continuous": continuous integration, continuous delivery, continuous deployment, continuous monitoring. So you also need to build a continuous application security (as described by Tim Chase in his course). This means that you continuously need to implement security in your applications by building your own continuous application stack.
 
+![]({{ site.baseurl}}/images/scaling-up-appsec/continuous-sec-app-stack.png "A continuous application security stack")
 
 ![A continuous application security stack](../images/scaling-up-appsec/continuous-sec-app-stack.png)
+
+
 
 The continuous security application stack tries to combine all the layers described in this post into a single development environment and platform. At the bottom of the stack are the dashboards with metrics and alerts derived from the security findings, risks and events (the single-pane of glass). Having a single and aggregated overview of all the risks and vulnerabilities helps identifying the main gaps and act upon them. SIEM is more for the security operations team, but correlating these overviews and data does bring added value to the AppSec team too.
 
@@ -129,6 +138,7 @@ One point that I have not described in depth is the importance of setting up a s
 ## Conclusions
 In a nutshell, the picture below tries to summarise what is important to develop and scale up in an AppSec program, taking into account that the ultimate goal is to delivery valuable secure applications, faster. Therefore, it is very important to continuously monitor and improve all these layers to accommodate the fast-paced changes so intrinsic to the IT industry.
 
+![]({{ site.baseurl}}/images/scaling-up-appsec/app-ecosystem.png "A scalable AppSec program approach")
 
 ![A scalable AppSec program approach](../images/scaling-up-appsec/app-ecosystem.png)
 
@@ -143,14 +153,16 @@ Summarising, having the AppSec team engaging solely with the DevOps teams is not
 
 ---
 
-## Additional remarks
+**Additional remarks**
+
 Through out this post I'm mostly focused in DevOps, but that doesn't mean that the ideas presented here are not extensible to other development methodologies. I do believe in the DevOps fundamental principles and believe that they can help improve the overall quality of software systems. But, I'm not very enthusiastic with the term DevSecOps. I only use it through this post to keep things simpler and more relatable to the common terminology used these days in the IT security.
 
 Additionally, I consider privacy an extension of security. Privacy is not security, but without information security, you can't implement privacy. Despite privacy engineering is still in its infancy, most of the ideas described in this post are directly applicable to a software methodology that considers privacy by design and by default. In fact, these ideas might be even extended to other software quality properties, like maintainability, performance, etc.
 
 ---
 
-## Acknowledgements
+**Acknowledgements**
+
 I certainly wouldn't have written this post in the same way if hadn't experienced first had how policies, standards, reference and future state architectures are important for an organisation. So thanks Jacek Offierski for mentoring and pushing me in that direction.
 
 Also, I wouldn't have such a holistic approach to security and software development if it wouldn't the amazing discussions and talks I have with Martijn Klingens and Bernard Knaapen. So again thanks guys, for pushing me to always think outside of the box.
