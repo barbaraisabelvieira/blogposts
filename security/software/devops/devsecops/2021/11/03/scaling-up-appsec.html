@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Scaling up AppSec within your Enterprise | Barbara Vieira Blog</title>
+<title>Scaling up AppSec within your Enterprise | Bárbara Vieira Personal Page</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Scaling up AppSec within your Enterprise" />
 <meta property="og:locale" content="en_US" />
@@ -12,13 +12,14 @@
 <meta property="og:description" content="A holistic approach to the implementation of an AppSec program" />
 <link rel="canonical" href="https://barbaraisabelvieira.github.io/blogposts/security/software/devops/devsecops/2021/11/03/scaling-up-appsec.html" />
 <meta property="og:url" content="https://barbaraisabelvieira.github.io/blogposts/security/software/devops/devsecops/2021/11/03/scaling-up-appsec.html" />
-<meta property="og:site_name" content="Barbara Vieira Blog" />
+<meta property="og:site_name" content="Bárbara Vieira Personal Page" />
+<meta property="og:image" content="https://barbaraisabelvieira.github.io/blogposts/images/scaling-up-appsec/ssdlc.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-11-03T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Scaling up AppSec within your Enterprise","url":"https://barbaraisabelvieira.github.io/blogposts/security/software/devops/devsecops/2021/11/03/scaling-up-appsec.html","dateModified":"2021-11-03T00:00:00-05:00","datePublished":"2021-11-03T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://barbaraisabelvieira.github.io/blogposts/security/software/devops/devsecops/2021/11/03/scaling-up-appsec.html"},"description":"A holistic approach to the implementation of an AppSec program","@context":"https://schema.org"}</script>
+{"headline":"Scaling up AppSec within your Enterprise","url":"https://barbaraisabelvieira.github.io/blogposts/security/software/devops/devsecops/2021/11/03/scaling-up-appsec.html","dateModified":"2021-11-03T00:00:00-05:00","datePublished":"2021-11-03T00:00:00-05:00","image":"https://barbaraisabelvieira.github.io/blogposts/images/scaling-up-appsec/ssdlc.png","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://barbaraisabelvieira.github.io/blogposts/security/software/devops/devsecops/2021/11/03/scaling-up-appsec.html"},"description":"A holistic approach to the implementation of an AppSec program","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/blogposts/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://barbaraisabelvieira.github.io/blogposts/feed.xml" title="Barbara Vieira Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blogposts/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="/blogposts/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://barbaraisabelvieira.github.io/blogposts/feed.xml" title="Bárbara Vieira Personal Page" /><link rel="shortcut icon" type="image/x-icon" href="/blogposts/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
 <script>
@@ -53,7 +54,7 @@ window.onload = wrap_img;
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/blogposts/">Barbara Vieira Blog</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/blogposts/">Bárbara Vieira Personal Page</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -103,8 +104,12 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h3"><a href="#a-holistic-approach-to-the-implementation-of-an-appsecprogram">A holistic approach to the implementation of an AppSec program</a></li>
-<li class="toc-entry toc-h2"><a href="#devsecops">DevSecOps</a></li>
+<li class="toc-entry toc-h3"><a href="#summary">Summary</a></li>
+<li class="toc-entry toc-h2"><a href="#devsecops">DevSecOps</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#devsecops-is-notenough">DevSecOps is not enough…</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#baseline-policies-and-standards">Baseline Policies and Standards</a></li>
 <li class="toc-entry toc-h2"><a href="#an-enterprise-security-architecture">An Enterprise Security Architecture</a></li>
 <li class="toc-entry toc-h2"><a href="#api-first-securityservices">API-first security services</a></li>
@@ -112,10 +117,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#the-governance-circles">The governance circles</a></li>
 <li class="toc-entry toc-h2"><a href="#a-continuous-application-securitystack">A continuous application security stack</a></li>
 <li class="toc-entry toc-h2"><a href="#conclusions">Conclusions</a></li>
-<li class="toc-entry toc-h2"><a href="#additional-remarks">Additional remarks</a></li>
-<li class="toc-entry toc-h2"><a href="#acknowledgements">Acknowledgements</a></li>
-</ul><h3 id="a-holistic-approach-to-the-implementation-of-an-appsecprogram">
-<a class="anchor" href="#a-holistic-approach-to-the-implementation-of-an-appsecprogram" aria-hidden="true"><span class="octicon octicon-link"></span></a>A holistic approach to the implementation of an AppSec program</h3>
+</ul><h3 id="summary">
+<a class="anchor" href="#summary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary</h3>
 
 <p>The Standard Secure Software Development Lifecycle (SSDLC) ProcessNowadays enterprises that are going through a digital transformation are more and more concerned with improving their security practices. This is because:</p>
 <ol>
@@ -125,8 +128,9 @@ window.onload = wrap_img;
 
 <p>Nevertheless, due to a number of factors, the AppSec teams, services and budget have not changed significantly over the last years. So it’s important to understand how to scale up the AppSec services such that the AppSec team can keep up with the fast-paced software development inherent to the DevOps way of working.</p>
 
-<p><img src="../images/scaling-up-appsec/ssdlc.png" alt="Secure Software Development Lifecycle Process">
-<img src="/blogposts/../images/scaling-up-appsec/ssdlc.png" alt="" title="Secure Software Development Lifecycle Process"></p>
+<p><img src="/blogposts/images/scaling-up-appsec/ssdlc.png" alt="" title="Secure Software Development Lifecycle Process"></p>
+
+<p><img src="../images/scaling-up-appsec/ssdlc.png" alt="Secure Software Development Lifecycle Process"></p>
 
 <p><em>In this post I address this topic, by describing the main elements that are part of the AppSec ecosystem and how a scalable AppSec program could look like.</em></p>
 
@@ -146,8 +150,9 @@ window.onload = wrap_img;
 
 <p>Also, having each individual DevOps team automating security is not cost-effective. The cost can be colossal even, if we consider that each team uses a different CI/CD pipeline with different automated security tooling. When security services are not engineered and provided at an enterprise level, each DevOps team tends to reinvent the wheel and sometimes not doing it properly.</p>
 
-<p>###DevSecOps is not enough…
-DevSecOps is mainly focused on adding automated tooling to CI/CD pipelines to detect vulnerabilities earlier in the development process (the so-called shift-left). Despite agreeing that this brings an enormous benefit in terms of vulnerabilities detection at a faster pace, I also argue that this isn’t enough. Throwing a lot of security scanners into CI/CD without any governance or guidance around how these findings should be addressed, only solves half of the problem. At the same time, I also believe that having a dedicated security engineer per DevOps team isn’t a scalable approach. So, what’s the solution then?</p>
+<h3 id="devsecops-is-notenough">
+<a class="anchor" href="#devsecops-is-notenough" aria-hidden="true"><span class="octicon octicon-link"></span></a>DevSecOps is not enough…</h3>
+<p>DevSecOps is mainly focused on adding automated tooling to CI/CD pipelines to detect vulnerabilities earlier in the development process (the so-called shift-left). Despite agreeing that this brings an enormous benefit in terms of vulnerabilities detection at a faster pace, I also argue that this isn’t enough. Throwing a lot of security scanners into CI/CD without any governance or guidance around how these findings should be addressed, only solves half of the problem. At the same time, I also believe that having a dedicated security engineer per DevOps team isn’t a scalable approach. So, what’s the solution then?</p>
 
 <p>Keep in mind that the ultimate goal of the AppSec team should be enabling DevOps teams to autonomously drive and implement security in a mature way. So let’s start with the foundations. Let’s start by setting up the baseline policies and standards for your organisation that meet compliance requirements and are in-line with security best practices. Deriving policies and standards requires taking into account the enterprise architecture of the organisation, the nature of your applications, the IT strategy (including target technology stack and implementation strategy), compliance and legal requirements, the risk appetite of the organisation (which relates to type of industry and the type of data being processed), costs and budget, and the organisation culture.</p>
 
@@ -220,6 +225,8 @@ Let’s consider a typical IT organisation that includes the following structure
   <li>Two or more DevOps teams are organised into several departments inserted into a particular business line; each department consists of department lead, security engineer lead and a lead architect (of the department);</li>
 </ol>
 
+<p><img src="/blogposts/images/scaling-up-appsec/governance-circles.png" alt="" title="The structure of the Governance circles"></p>
+
 <p><img src="../images/scaling-up-appsec/governance-circles.png" alt="Structure of the Governance circles"></p>
 
 <p>Lets consider now three different governance circles that appear at different levels of the organisation:</p>
@@ -238,6 +245,8 @@ Let’s consider a typical IT organisation that includes the following structure
 <a class="anchor" href="#a-continuous-application-securitystack" aria-hidden="true"><span class="octicon octicon-link"></span></a>A continuous application security stack</h2>
 <p>The keyword in the DevOps world is “continuous”: continuous integration, continuous delivery, continuous deployment, continuous monitoring. So you also need to build a continuous application security (as described by Tim Chase in his course). This means that you continuously need to implement security in your applications by building your own continuous application stack.</p>
 
+<p><img src="/blogposts/images/scaling-up-appsec/continuous-sec-app-stack.png" alt="" title="A continuous application security stack"></p>
+
 <p><img src="../images/scaling-up-appsec/continuous-sec-app-stack.png" alt="A continuous application security stack"></p>
 
 <p>The continuous security application stack tries to combine all the layers described in this post into a single development environment and platform. At the bottom of the stack are the dashboards with metrics and alerts derived from the security findings, risks and events (the single-pane of glass). Having a single and aggregated overview of all the risks and vulnerabilities helps identifying the main gaps and act upon them. SIEM is more for the security operations team, but correlating these overviews and data does bring added value to the AppSec team too.</p>
@@ -249,6 +258,8 @@ Let’s consider a typical IT organisation that includes the following structure
 <h2 id="conclusions">
 <a class="anchor" href="#conclusions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusions</h2>
 <p>In a nutshell, the picture below tries to summarise what is important to develop and scale up in an AppSec program, taking into account that the ultimate goal is to delivery valuable secure applications, faster. Therefore, it is very important to continuously monitor and improve all these layers to accommodate the fast-paced changes so intrinsic to the IT industry.</p>
+
+<p><img src="/blogposts/images/scaling-up-appsec/app-ecosystem.png" alt="" title="A scalable AppSec program approach"></p>
 
 <p><img src="../images/scaling-up-appsec/app-ecosystem.png" alt="A scalable AppSec program approach"></p>
 
@@ -269,16 +280,16 @@ Let’s consider a typical IT organisation that includes the following structure
 
 <hr>
 
-<h2 id="additional-remarks">
-<a class="anchor" href="#additional-remarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional remarks</h2>
+<p><strong>Additional remarks</strong></p>
+
 <p>Through out this post I’m mostly focused in DevOps, but that doesn’t mean that the ideas presented here are not extensible to other development methodologies. I do believe in the DevOps fundamental principles and believe that they can help improve the overall quality of software systems. But, I’m not very enthusiastic with the term DevSecOps. I only use it through this post to keep things simpler and more relatable to the common terminology used these days in the IT security.</p>
 
 <p>Additionally, I consider privacy an extension of security. Privacy is not security, but without information security, you can’t implement privacy. Despite privacy engineering is still in its infancy, most of the ideas described in this post are directly applicable to a software methodology that considers privacy by design and by default. In fact, these ideas might be even extended to other software quality properties, like maintainability, performance, etc.</p>
 
 <hr>
 
-<h2 id="acknowledgements">
-<a class="anchor" href="#acknowledgements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acknowledgements</h2>
+<p><strong>Acknowledgements</strong></p>
+
 <p>I certainly wouldn’t have written this post in the same way if hadn’t experienced first had how policies, standards, reference and future state architectures are important for an organisation. So thanks Jacek Offierski for mentoring and pushing me in that direction.</p>
 
 <p>Also, I wouldn’t have such a holistic approach to security and software development if it wouldn’t the amazing discussions and talks I have with Martijn Klingens and Bernard Knaapen. So again thanks guys, for pushing me to always think outside of the box.</p>
