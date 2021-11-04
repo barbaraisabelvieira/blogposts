@@ -5,11 +5,11 @@ permalink: /about/
 ---
 
 
-Working as a Security engineer or Cryptography consultant somewhere in the world. I love software, application security, applied crypto and privacy engineering. 
+Working as a Security engineer or Cryptography consultant somewhere in the world. 
+
+I love software, application security, applied crypto(graphy) and privacy engineering. 
 
 I hate when people tell me I'm not capable of something.
-
-This my blogging platform.
 
 ---
 
