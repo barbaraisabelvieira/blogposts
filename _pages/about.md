@@ -11,6 +11,7 @@ I love software, application security, applied crypto(graphy) and privacy engine
 
 I hate when people tell me I'm not capable of something.
 
+
 ---
 
 <sub>If you'd like to get in contact, just drop me an email: <barbaraisabelvieira@gmail.com> </sub>
