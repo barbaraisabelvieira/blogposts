@@ -10,7 +10,7 @@ search_exclude: true
 ---
 ### Summary
 
-![]({{ site.baseurl}}/images/scaling-up-appsec/ssdlc.png ){: style="float: right" height="450px" with="300px"}
+![]({{ site.baseurl}}/images/scaling-up-appsec/ssdlc.png ){: style="float: right" height="350px" with="300px"}
 
 The Standard Secure Software Development Lifecycle (SSDLC) ProcessNowadays enterprises that are going through a digital transformation are more and more concerned with improving their security practices. This is because:
 1. Product security became of utmost importance with the wide adoption of micro-services and API-driven architectures;
