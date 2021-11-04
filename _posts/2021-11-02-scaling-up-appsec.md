@@ -10,16 +10,16 @@ search_exclude: true
 ---
 ### Summary
 
+![]({{ site.baseurl}}/images/scaling-up-appsec/ssdlc.png ){: style="float: right" height="450px" with="300px"}
 
 The Standard Secure Software Development Lifecycle (SSDLC) ProcessNowadays enterprises that are going through a digital transformation are more and more concerned with improving their security practices. This is because:
 1. Product security became of utmost importance with the wide adoption of micro-services and API-driven architectures;
 2. With the migration to the public cloud, the attack surface of the applications has largely increased, leading to an increased number of vulnerabilities.
 
 Nevertheless, due to a number of factors, the AppSec teams, services and budget have not changed significantly over the last years. So it's important to understand how to scale up the AppSec services such that the AppSec team can keep up with the fast-paced software development inherent to the DevOps way of working.
-
-![]({{ site.baseurl}}/images/scaling-up-appsec/ssdlc.png "Secure Software Development Lifecycle Process")
-
+<!--
 ![Secure Software Development Lifecycle Process](../images/scaling-up-appsec/ssdlc.png)
+-->
 
 *In this post I address this topic, by describing the main elements that are part of the AppSec ecosystem and how a scalable AppSec program could look like.*
 
@@ -103,10 +103,11 @@ Let's consider a typical IT organisation that includes the following structure:
 2. Two or more DevOps teams are organised into several departments inserted into a particular business line; each department consists of department lead, security engineer lead and a lead architect (of the department);
 
 
-![]({{ site.baseurl}}/images/scaling-up-appsec/governance-circles.png "The structure of the Governance circles")
+![]({{ site.baseurl}}/images/scaling-up-appsec/governance-circles.png "The structure of the Governance circles"){: height="450px" with="300px"}
 
+<!-- 
 ![Structure of the Governance circles](../images/scaling-up-appsec/governance-circles.png)
-
+-->
 
 Lets consider now three different governance circles that appear at different levels of the organisation:
 
@@ -123,10 +124,11 @@ The shape of these circles and the frequency with what these meetings happen is 
 ## A continuous application security stack
 The keyword in the DevOps world is "continuous": continuous integration, continuous delivery, continuous deployment, continuous monitoring. So you also need to build a continuous application security (as described by Tim Chase in his course). This means that you continuously need to implement security in your applications by building your own continuous application stack.
 
-![]({{ site.baseurl}}/images/scaling-up-appsec/continuous-sec-app-stack.png "A continuous application security stack")
+![]({{ site.baseurl}}/images/scaling-up-appsec/continuous-sec-app-stack.png "A continuous application security stack"){: height="450px" with="300px"}
 
+<!--
 ![A continuous application security stack](../images/scaling-up-appsec/continuous-sec-app-stack.png)
-
+-->
 
 
 The continuous security application stack tries to combine all the layers described in this post into a single development environment and platform. At the bottom of the stack are the dashboards with metrics and alerts derived from the security findings, risks and events (the single-pane of glass). Having a single and aggregated overview of all the risks and vulnerabilities helps identifying the main gaps and act upon them. SIEM is more for the security operations team, but correlating these overviews and data does bring added value to the AppSec team too.
@@ -140,7 +142,9 @@ In a nutshell, the picture below tries to summarise what is important to develop
 
 ![]({{ site.baseurl}}/images/scaling-up-appsec/app-ecosystem.png "A scalable AppSec program approach")
 
+<!--
 ![A scalable AppSec program approach](../images/scaling-up-appsec/app-ecosystem.png)
+-->
 
 I would like to finalise this post with some remarks:
 
