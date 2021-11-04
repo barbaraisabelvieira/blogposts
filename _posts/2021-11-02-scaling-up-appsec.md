@@ -28,7 +28,7 @@ Nevertheless, due to a number of factors, the AppSec teams, services and budget 
 ## DevSecOps
 The standard Secure Software Development Lifecycle (SSDLC) process has gone through several iterations over the past years. Mostly, the phases of the process had not changed significantly, but instead, these phases tried to adapt to the different development methodologies. If we consider the most popular and adopted software engineering methodologies, SSDLC started with being Waterfall, then adapted itself to Agile development and now DevOps, with DevSecOps.
 
-DevSecOps means building security into application development from end-to-end. DevOps teams should automate security to protect the overall environment and data (see RedHat description of DevSecOps here). However, this is far from being an easy task:
+DevSecOps means building security into application development from end-to-end. DevOps teams should automate security to protect the overall environment and data (see [RedHat description](https://www.redhat.com/en/topics/devops/what-is-devsecops) of DevSecOps here). However, this is far from being an easy task:
 1. The maturity of the development teams with regards to security is not at the level it should be. So shifting the responsibility of automating security controls into the development process to the DevOps teams is most likely going to fail;
 2. Additionally, DevOps teams may struggle (a lot) to securely configure and manage the infrastructure; with the massive adoption of public cloud environments as target platforms and all the different possible configurations that cloud resources offer, it's really hard to securely configure and manage the cloud infrastructure.
 
@@ -43,7 +43,7 @@ Keep in mind that the ultimate goal of the AppSec team should be enabling DevOps
 
 
 ## Baseline Policies and Standards
-A strong governance approach starts with the definition with policies and standards that utilises an integrated approach to manage requirements. If you don't know the difference between polices and standards you can check it here.
+A strong governance approach starts with the definition with policies and standards that utilises an integrated approach to manage requirements. If you don't know the difference between polices and standards you can check it [here](https://www.complianceforge.com/word-crimes/policy-vs-standard-vs-control-vs-procedure).
 
 Policies are enforced by standards. Standards establish the minimum security requirements that ensure that systems, applications and processes are designed and operated with the baseline security principles and protections. Without baseline security requirements to guide development teams on how security should be implemented in the applications, your AppSec team will be constantly overwhelmed and outnumbered. They will struggle so much with all the questions regarding with what's allowed or not, what's secure or not, that they won't be able to keep up and do the things that actually matter.
 
@@ -122,7 +122,7 @@ The risks and threats addressed in circle meetings at the highest levels should 
 The shape of these circles and the frequency with what these meetings happen is highly dependent on the organisational structure of your enterprise. Also, empowering the people with the right mindset is crucial to the success of this initiative. Making it practical, fun and valuable for the DevOps teams, as well as, having support and engagement of management, is key.
 
 ## A continuous application security stack
-The keyword in the DevOps world is "continuous": continuous integration, continuous delivery, continuous deployment, continuous monitoring. So you also need to build a continuous application security (as described by Tim Chase in his course). This means that you continuously need to implement security in your applications by building your own continuous application stack.
+The keyword in the DevOps world is "continuous": continuous integration, continuous delivery, continuous deployment, continuous monitoring. So you also need to build a continuous application security (as described by Tim Chase in [his course](https://www.linkedin.com/learning/devsecops-continuous-application-security/the-rise-of-continuous-application-security?u=2074018)). This means that you continuously need to implement security in your applications by building your own continuous application stack.
 
 ![]({{ site.baseurl}}/images/scaling-up-appsec/continuous-sec-app-stack.png "A continuous application security stack"){: height="450px" with="300px"}
 
@@ -138,7 +138,7 @@ The manual assisted assessments like code reviews, penetration testing and so on
 One point that I have not described in depth is the importance of setting up a secure (cloud) computing platform. As described in the beginning of this post, with the massive adoption of public cloud environments and all the gazillions of possible configurations that cloud resources offer, it's really hard to securely configure and manage the cloud infrastructure. So, creating default (baseline) configurations of cloud resources with secure defaults, is essential to enable a secure platform in a fast paced DevOps environment. These can be available through configuration templates (stored in the central version control system where all the teams can contribute to) that implement reference implementations of the resources used within the organisation.
 
 ## Conclusions
-In a nutshell, the picture below tries to summarise what is important to develop and scale up in an AppSec program, taking into account that the ultimate goal is to delivery valuable secure applications, faster. Therefore, it is very important to continuously monitor and improve all these layers to accommodate the fast-paced changes so intrinsic to the IT industry.
+In a nutshell, the picture below tries to summarise what is important to develop and scale up in an AppSec program, taking into account that the **ultimate goal is to delivery valuable secure applications, faster**. Therefore, it is very important to continuously monitor and improve all these layers to accommodate the fast-paced changes so intrinsic to the IT industry.
 
 ![]({{ site.baseurl}}/images/scaling-up-appsec/app-ecosystem.png "A scalable AppSec program approach")
 
