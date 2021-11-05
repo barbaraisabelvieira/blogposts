@@ -140,7 +140,7 @@ One point that I have not described in depth is the importance of setting up a s
 ## Conclusions
 In a nutshell, the picture below tries to summarise what is important to develop and scale up in an AppSec program, taking into account that the **ultimate goal is to delivery valuable secure applications, faster**. Therefore, it is very important to continuously monitor and improve all these layers to accommodate the fast-paced changes so intrinsic to the IT industry.
 
-![]({{ site.baseurl}}/images/scaling-up-appsec/app-ecosystem.png "A scalable AppSec program approach")
+![]({{ site.baseurl}}/images/scaling-up-appsec/appsec-ecosystem.png "A scalable AppSec program approach")
 
 <!--
 ![A scalable AppSec program approach](../images/scaling-up-appsec/app-ecosystem.png)
