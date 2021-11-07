@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Schrems II implications when using public cloud services | Bárbara Vieira’s Personal Page</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Schrems II implications when using public cloud services" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Implications of using public cloud services for processing personal data of EEA citizens." />
+<meta property="og:description" content="Implications of using public cloud services for processing personal data of EEA citizens." />
+<link rel="canonical" href="https://barbaraisabelvieira.github.io/blogposts/schremsii/privacy/cloud/edpb/2021/02/24/schmres-ii-cloud-migrations.html" />
+<meta property="og:url" content="https://barbaraisabelvieira.github.io/blogposts/schremsii/privacy/cloud/edpb/2021/02/24/schmres-ii-cloud-migrations.html" />
+<meta property="og:site_name" content="Bárbara Vieira’s Personal Page" />
+<meta property="og:image" content="https://barbaraisabelvieira.github.io/blogposts/images/2021-02-schremsii/schremsii.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-24T00:00:00-06:00" />
+<script type="application/ld+json">
+{"headline":"Schrems II implications when using public cloud services","url":"https://barbaraisabelvieira.github.io/blogposts/schremsii/privacy/cloud/edpb/2021/02/24/schmres-ii-cloud-migrations.html","dateModified":"2021-02-24T00:00:00-06:00","datePublished":"2021-02-24T00:00:00-06:00","image":"https://barbaraisabelvieira.github.io/blogposts/images/2021-02-schremsii/schremsii.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://barbaraisabelvieira.github.io/blogposts/schremsii/privacy/cloud/edpb/2021/02/24/schmres-ii-cloud-migrations.html"},"description":"Implications of using public cloud services for processing personal data of EEA citizens.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blogposts/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://barbaraisabelvieira.github.io/blogposts/feed.xml" title="Bárbara Vieira's Personal Page" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1M5N0S5V5B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1M5N0S5V5B');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blogposts/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blogposts/">Bárbara Vieira&#39;s Personal Page</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blogposts/about/">About Me</a><a class="page-link" href="/blogposts/search/">Search</a><a class="page-link" href="/blogposts/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Schrems II implications when using public cloud services</h1><p class="page-description">Implications of using public cloud services for processing personal data of EEA citizens.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-02-24T00:00:00-06:00" itemprop="datePublished">
+        Feb 24, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blogposts/categories/#schremsii">schremsii</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blogposts/categories/#privacy">privacy</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blogposts/categories/#cloud">cloud</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blogposts/categories/#edpb">edpb</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#what-is-schremsii">What is Schrems II?</a></li>
+<li class="toc-entry toc-h1"><a href="#edpb-and-recommendations-on-supplementary-measures">EDPB and recommendations on supplementary measures</a></li>
+<li class="toc-entry toc-h1"><a href="#supplementary-measures-of-technical-nature">Supplementary measures of technical nature</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#use-case-1">Use case 1</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#example-of-a-possible-scenario-for-use-case-1">Example of a possible scenario for Use Case 1</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#use-case-3">Use case 3</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#example-of-a-possible-scenario-for-use-case-3">Example of a possible scenario for Use Case 3</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#use-case-6">Use case 6</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#example-of-a-possible-scenario-for-use-case-6">Example of a possible scenario for Use Case 6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#conclusion">Conclusion</a></li>
+</ul><p><img src="/blogposts/images/2021-02-schremsii/schremsii.jpg" alt="" height="350px" with="300px"></p>
+
+<p>This blog post addresses the impact of Schrems II in organisations within the European Economic Area (EEA) that host their services in public cloud services (owned by companies that are not part of EEA). In particular, I address the impact of EEA organisations that host their services in Microsoft Azure or Amazon Web Services (AWS). This analysis is non-exhaustive and the impact of Schrems II has more wider ramifications than the ones specifically addressed in this post.</p>
+
+<p><em>Please note that I’m not a person with legal background and this is just a summary of all the conclusions I’ve drawn over the past months during the discussions with my legal fellows about Schrems II. Therefore, this blog post mainly focus on the technical (security) measures.</em></p>
+
+<h1 id="what-is-schremsii">
+<a class="anchor" href="#what-is-schremsii" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Schrems II?</h1>
+<p>The Schrems II decision by the European Union Court of Justice invalidated the adequacy decision for the EU-U.S. Privacy Shield Framework in the mid of 2020. This framework was used to conduct transatlantic data transfers in compliance with European Union (EU) data protection rules (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a>).
+The Court required that companies should actively risk-assess whether supplementary measures (of technical nature) are needed for data transfers outside the EEA. After this assessment, if the company is still not able to “guarantee an essentially equivalent level of protection under EU law”, then it should immediately suspend the transfer of personal data to the 3rd country.</p>
+
+<h1 id="edpb-and-recommendations-on-supplementary-measures">
+<a class="anchor" href="#edpb-and-recommendations-on-supplementary-measures" aria-hidden="true"><span class="octicon octicon-link"></span></a>EDPB and recommendations on supplementary measures</h1>
+<p>In November of 2020, the European Data Protection Board (EDPB) released a list of recommendations for data transfers (to countries outside of EAA) in a way to help data controllers and processors to ensure compliance with GDPR (the document can be consulted <a href="https://edpb.europa.eu/sites/default/files/consultation/edpb_recommendations_202001_supplementarymeasurestransferstools_en.pdf">here</a>). These recommendations contain a non-exhaustive list of examples of supplementary measures that can be used (by data processors and controllers) when transferring (personal) data cross-boarders. 
+These supplementary measures can be of the following nature (1) contractual, (2) organisational or (3) technical.</p>
+
+<p>All the measures can be combined in order to enhance the level of data protection. Nevertheless, EDPB states that contractual and organisational measures alone do not overcome access to personal data by public authorities of the 3rd country. In some cases, EDPB even considers that only technical measures can render ineffective access by public authorities in third countries to personal data technical.</p>
+
+<p><strong><em>The recommendation of EDPB under Schrems II is the following:</em></strong></p>
+<ol>
+  <li>If the combined supplementary measures allow you to reach the level of protection in accordance to Article 46 GDPR, data transfers to the 3rd country may go ahead.</li>
+  <li>When the supplementary measures are not enough to reach the level of protection in accordance to Article 46 GDPR, then you must not start or (in case you are already conducting transfers) suspend (or end) the transfer of personal data to the 3rd country.</li>
+</ol>
+
+<p><em>Reference: paragraphs 50. and 51 of the EDPB document (see link above).</em></p>
+
+<h1 id="supplementary-measures-of-technical-nature">
+<a class="anchor" href="#supplementary-measures-of-technical-nature" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supplementary measures of technical nature</h1>
+<p>EDPB gives a (non-exhaustive) list of scenarios describing supplementary measures of the technical nature and makes a distinction between scenarios where technical measures can be found and where they cannot. In this post I address some of the use cases described.</p>
+
+<h2 id="use-case-1">
+<a class="anchor" href="#use-case-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use case 1</h2>
+<p><em>Data storage for backup and other purposes that do not require access to data in the clear.</em></p>
+
+<p>A data exporter uses a hosting service provider in a third country to store personal data, the following requirements should be in place:</p>
+<ol>
+  <li>Data must be encrypted using state of the art encryption algorithms that are considered to be secure and are flawlessly implemented and maintained;</li>
+  <li>The keys must be reliably managed and retained under the sole control of the data exporter or by a 3rd party that ensures an adequate level of protection;</li>
+</ol>
+
+<h3 id="example-of-a-possible-scenario-for-use-case-1">
+<a class="anchor" href="#example-of-a-possible-scenario-for-use-case-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of a possible scenario for Use Case 1</h3>
+<p>Let’s consider you have an application running in your private cloud and you wish to backup the (personal) data in some public cloud provider such as Azure or AWS (which are US-based companies and according to EDPB may not ensure the adequate level of protection as required in the GDPR).</p>
+
+<p>Then all the data to be backed up must be encrypted using strong encryption and the keys must be stored in a place where the cloud providers cannot access it. For instance, if you’re using Azure Storage or an AWS S3 bucket for the backup, the data must be encrypted before being copied and the keys cannot be stored in Key Vault (Azure) or KMS (AWS). The keys must be stored for instance, in a proper device in your private cloud (assuming your private cloud resides and is managed within the EEA).</p>
+
+<h2 id="use-case-3">
+<a class="anchor" href="#use-case-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use case 3</h2>
+<p><em>Encrypted data merely transiting third countries.</em></p>
+
+<p>A data exporter wishes to transfer data to a destination recognised as offering adequate protection in accordance with Article 45 GDPR. When the data is routed via a 3rd country that doesn’t provide the adequate level of protection, then:</p>
+<ol>
+  <li>The data must be encrypted while in transit and should only be possible to decrypt it outside of the 3rd country in question;</li>
+  <li>Data exchange must rely on an agreed Public Key Infrastructure (PKI) using state of the art measures used against active and passive attacks;</li>
+  <li>Data encryptions must rely in state of the art algorithms that are flawlessly implemented and maintained;</li>
+  <li>Keys used for data encryption must be reliably managed.</li>
+</ol>
+
+<h3 id="example-of-a-possible-scenario-for-use-case-3">
+<a class="anchor" href="#example-of-a-possible-scenario-for-use-case-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of a possible scenario for Use Case 3</h3>
+<p>Let’s again consider you have an application A (that processes personal data) deployed in your private cloud service (hosted and managed in The Netherlands). Application A sends data to a 3rd party application B (hosted and managed in Germany) and the data is routed through the Azure cloud.</p>
+
+<p>Then (as usual) you must protect the communication channel between application A and B using TLS (at least version 1.2) with an adequate cipher suite combination and using a trusted PKI service. The private keys must be reliably managed by you or your German counterpart, and must never be exposed to/in Microsoft Azure.</p>
+
+<p>When these requirements are met, EDPB considers that the measures effectively provide the adequate level of protection of the personal data being transferred.</p>
+
+<h2 id="use-case-6">
+<a class="anchor" href="#use-case-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use case 6</h2>
+<p><em>Transfer to cloud services providers or other processors which require access to data in the clear for their assigned tasks.</em></p>
+
+<p>In this case, EDPB considers that there are NO effective (technical) measures that can be employed to enforce the adequate level of protection. I guess this applies mainly when the cloud provider is owned and managed by a company from a 3rd country that does not provide the adequate level of protection.</p>
+
+<h3 id="example-of-a-possible-scenario-for-use-case-6">
+<a class="anchor" href="#example-of-a-possible-scenario-for-use-case-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of a possible scenario for Use Case 6</h3>
+<p>Let’s consider you have an application running in Azure or AWS that processes personal data of EU citizens and the cloud provider can access the data in the clear (e.g.: access to the data may be required to provide support when needed). Then you must suspend or end the data process (and remove the data), in case you don’t have any other organisational or contractual measures in place that enable you to provide the adequate level of protection.</p>
+
+<p>Please take into account that for processing any data in the cloud, you always need the data in the clear (processing encrypted data is not feasible for industry-like datasets). Since the cloud provider can access the data at any point in time, it may be compelled to handover your data to the authorities of the country where it operates, with or without your consent (and this is not compliant with the GDPR).</p>
+
+<p><em>It goes without saying, but please note that the translations of the use cases described in this post are non-exhaustive and are solely based on my interpretation (and past experience) of the EDPB guidelines.</em></p>
+
+<h1 id="conclusion">
+<a class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h1>
+<p>If you own a company that processes personal data of EU citizens and hosts all its services in the public cloud providers, such as Azure or AWS, then you may need evaluate if the contractual or organisational measures in place are enough to you keep going.</p>
+
+<p>As concluded by EDPB, at this point in time, there are no technical measures that can be easily implemented to continuing processing personal data in public cloud services as is, without the possibility of mass surveillance. Note that applications need to process cleartext data (we can’t process data in its encrypted form yet), so if the environment where the data is processed is not under your total control, there’s indeed the possibility of breach.</p>
+
+<p>So in order to keep your services up and running, it seems that only the way forward (at this point in time) is for these public cloud services to create separate companies in the EEA that operate completely independently (legally and operationally) from the main corporate. Perhaps this is a bit premature conclusion, but as stated before this is just a preliminary analysis of the current scenarios.</p>
+
+<hr>
+
+<p><strong>Acknowledgements</strong></p>
+
+<p>I’d like to thank my colleague Ewoud Swart for the fruitful comments. His (legal) perspective did strengthen the content of this post.</p>
+
+  </div><a class="u-url" href="/blogposts/schremsii/privacy/cloud/edpb/2021/02/24/schmres-ii-cloud-migrations.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blogposts/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blogposts/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blogposts/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Writing about Applied Cryptography, Application Security and Privacy Engineering.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/barbaraisabelvieira" title="barbaraisabelvieira"><svg class="svg-icon grey"><use xlink:href="/blogposts/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/barbaraisv" title="barbaraisv"><svg class="svg-icon grey"><use xlink:href="/blogposts/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
