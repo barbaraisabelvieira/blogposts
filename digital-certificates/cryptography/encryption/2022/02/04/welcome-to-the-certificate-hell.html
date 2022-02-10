@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Welcome to the Certificate Hell! | Bárbara Vieira’s Personal Page</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Welcome to the Certificate Hell!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Managing digital certificates in the real world." />
+<meta property="og:description" content="Managing digital certificates in the real world." />
+<link rel="canonical" href="https://barbaraisabelvieira.github.io/blogposts/digital-certificates/cryptography/encryption/2022/02/04/welcome-to-the-certificate-hell.html" />
+<meta property="og:url" content="https://barbaraisabelvieira.github.io/blogposts/digital-certificates/cryptography/encryption/2022/02/04/welcome-to-the-certificate-hell.html" />
+<meta property="og:site_name" content="Bárbara Vieira’s Personal Page" />
+<meta property="og:image" content="https://barbaraisabelvieira.github.io/blogposts/images/n-a.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-02-04T00:00:00-06:00" />
+<script type="application/ld+json">
+{"headline":"Welcome to the Certificate Hell!","url":"https://barbaraisabelvieira.github.io/blogposts/digital-certificates/cryptography/encryption/2022/02/04/welcome-to-the-certificate-hell.html","dateModified":"2022-02-04T00:00:00-06:00","datePublished":"2022-02-04T00:00:00-06:00","image":"https://barbaraisabelvieira.github.io/blogposts/images/n-a.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://barbaraisabelvieira.github.io/blogposts/digital-certificates/cryptography/encryption/2022/02/04/welcome-to-the-certificate-hell.html"},"description":"Managing digital certificates in the real world.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blogposts/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://barbaraisabelvieira.github.io/blogposts/feed.xml" title="Bárbara Vieira's Personal Page" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1M5N0S5V5B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1M5N0S5V5B');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blogposts/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blogposts/">Bárbara Vieira&#39;s Personal Page</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blogposts/about/">About Me</a><a class="page-link" href="/blogposts/search/">Search</a><a class="page-link" href="/blogposts/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Welcome to the Certificate Hell!</h1><p class="page-description">Managing digital certificates in the real world.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-04T00:00:00-06:00" itemprop="datePublished">
+        Feb 4, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blogposts/categories/#digital-certificates">digital-certificates</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blogposts/categories/#cryptography">cryptography</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blogposts/categories/#encryption">encryption</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#digital-certificates">Digital certificates</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#main-components-of-certificates">Main components of certificates</a></li>
+<li class="toc-entry toc-h3"><a href="#using-certificates-to-establish-secure-connections">Using certificates to establish secure connections</a></li>
+<li class="toc-entry toc-h3"><a href="#what-is-the-trust-chain">What is the trust-chain?</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#the-role-of-digital-certificates-when-setting-up-secure-connections">The role of digital certificates when setting up secure connections</a></li>
+<li class="toc-entry toc-h2"><a href="#trusted-public-key-infrastructure-pki">Trusted Public-Key Infrastructure (PKI)</a></li>
+<li class="toc-entry toc-h2"><a href="#further-reading">Further reading</a></li>
+</ul><p>Digital certificates, despite being of utmost importance these days, are always seen by many organizations as huge burden and more than often poorly managed. DevOps teams constantly struggle with properly managing digital certificates and most of the times set them up in insecure ways leading to leakage of certificate keys and consequently to insecure systems. 
+In this post I address the main issues present in certificate management. I address what some teams refer to as “certificate hell” and try to demystify some of the misconceptions associated to certificates lifecycle. 
+In fact I advocate that certificates are in reality simple to understand and easy to manage, as long as you know a thing or two about how trusted Public Key Infrastructure (PKIs) work.</p>
+
+<p>Please note that through this post I’ll refer to digital certificates simply as certificates.</p>
+
+<h2 id="digital-certificates">
+<a class="anchor" href="#digital-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Digital certificates</h2>
+
+<p>A Digital Certificate is a piece of data that typically attests that a certain (private) key is owned by a specific entity. Digital certificates are used everywhere across the entire internet and they enable the trust-chain that allows the, somewhat hassle-free setup, of secure communications. Digital certificates can also be used in other context, like enable digital signatures, but their main goal is to uniquely and undoubtedly identify an internet service or entity.</p>
+
+<h3 id="main-components-of-certificates">
+<a class="anchor" href="#main-components-of-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main components of certificates</h3>
+
+<p><img src="/blogposts/images/certificate-hell/digital-certificate.jpg" alt="" title="Main components of a digital certificate"></p>
+
+<p>A certificate contains (among other things) the following main components:</p>
+<ol>
+  <li>
+<strong>Owner details</strong> - details like DNS name, organization name, etc.</li>
+  <li>
+<strong>Validity</strong> - the dates in which the certificate is valid</li>
+  <li>
+<strong>Public Key</strong> of the owner - the public key associated to the private key of the owner of the certificate</li>
+  <li>
+<strong>Signature of the Certification Authority (CA)</strong> - a digital signature of a known and trusted CA attesting that all the information present in the certificate is indeed valid and has validated by the CA</li>
+</ol>
+
+<p><img src="/blogposts/images/certificate-hell/google-certificate.png" alt="" title=" " height="450px" with="300px" style="float: right">
+For instance, if you consider the google.com certificate (on the right side):</p>
+<ol>
+  <li>
+<strong>Owner details</strong> - <code class="language-plaintext highlighter-rouge">google.com</code>
+</li>
+  <li>
+<strong>Validity</strong> - <code class="language-plaintext highlighter-rouge">not before 10-01-2022</code> and <code class="language-plaintext highlighter-rouge">not after 04-04-2022</code> (validity of 4 months)</li>
+  <li>
+<strong>Public Key</strong> of the owner - ` 04 09 … 3E`</li>
+  <li>
+<strong>Signature of the Certification Authority (CA)</strong> - <code class="language-plaintext highlighter-rouge">30 44 ... 3E</code>
+</li>
+</ol>
+
+<h3 id="using-certificates-to-establish-secure-connections">
+<a class="anchor" href="#using-certificates-to-establish-secure-connections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using certificates to establish secure connections</h3>
+
+<p>Why is this information so important? As stated in the beginning, the goal of the certificate is to identify the owner of a particular private key associated to the public key in the certificate. 
+So, when new certificate is validated by a trusted external party, the Certification Authority (CA), this means that the CA attests that entity <code class="language-plaintext highlighter-rouge">A</code> is the owner of the public/private key pair <code class="language-plaintext highlighter-rouge">(PubK, PrivK)</code>. Therefore, when the key pair is used in the context of establishing a secure communication, one can trust that the server to which they are connecting to is indeed who it says it is.</p>
+
+<p>Let’s consider an example. Let’s say you’re trying to connect to <code class="language-plaintext highlighter-rouge">google.com</code> using your browser. Your browser will to a <code class="language-plaintext highlighter-rouge">GET</code> request to <code class="language-plaintext highlighter-rouge">google.com</code> and the Google server will reply with the certificate and a set of parameters. This only happens, because by default Google only accepts secure connections.</p>
+
+<p><img src="/blogposts/images/certificate-hell/eg-secure-connections.jpg" alt="" title="E.g.: Using certificates to enable secure connections"></p>
+
+<p>The browser will get the certificate and check if the certificate is indeed valid, i.e., the browser checks:</p>
+<ol>
+  <li>If the CA digital signature of the certificate is valid (more about validity of digital signatures can be found <a href="https://en.wikipedia.org/wiki/Digital_signature">here</a>)</li>
+  <li>If the certificate is indeed issued to <code class="language-plaintext highlighter-rouge">google.com</code>. This is a fundamental check and if the URL your trying to access doesn’t match with the Common Name in the certificate (or is specified in the SAN fields), the certificate won’t be validated by the browser.</li>
+  <li>If the current date is within the range in which the certificate is valid.</li>
+  <li>If the certificate has not been revoked by the CA. Revoked certificates must be completely discarded.</li>
+  <li>That all the certificates in the <strong>trust chain</strong> of Google’s certificate satisfy the properties above (i.e., the sub-CA certificate and the CA certificate itself are also validated in the same way)</li>
+</ol>
+
+<h3 id="what-is-the-trust-chain">
+<a class="anchor" href="#what-is-the-trust-chain" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is the trust-chain?</h3>
+
+<p>When the browser validates the CA certificate, it needs to do all the checks above. However, since CA certificates are self-signed, in order to validate the signature present in the CA certificate, the browser ultimately needs to check if the CA is listed in the list of trusted CAs. 
+This list of trusted CAs either comes loaded in the browser (e.g.:Firefox) during installation time, or corresponds to the same list of trusted CAs of Operating System (OS) where the browser is running at (e.g.: Safari).</p>
+
+<p><img src="/blogposts/images/certificate-hell/secure-connections.jpg" alt="" title="Using certificates to enable secure connections"></p>
+
+<h2 id="the-role-of-digital-certificates-when-setting-up-secure-connections">
+<a class="anchor" href="#the-role-of-digital-certificates-when-setting-up-secure-connections" aria-hidden="true"><span class="octicon octicon-link"></span></a>The role of digital certificates when setting up secure connections</h2>
+
+<h2 id="trusted-public-key-infrastructure-pki">
+<a class="anchor" href="#trusted-public-key-infrastructure-pki" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trusted Public-Key Infrastructure (PKI)</h2>
+
+<h2 id="further-reading">
+<a class="anchor" href="#further-reading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further reading</h2>
+
+<p>Podcast with Ryan Sleevi.</p>
+
+
+  </div><a class="u-url" href="/blogposts/digital-certificates/cryptography/encryption/2022/02/04/welcome-to-the-certificate-hell.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blogposts/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blogposts/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blogposts/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Writing about Applied Cryptography, Application Security and Privacy Engineering.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/barbaraisabelvieira" target="_blank" title="barbaraisabelvieira"><svg class="svg-icon grey"><use xlink:href="/blogposts/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/barbaraisv" target="_blank" title="barbaraisv"><svg class="svg-icon grey"><use xlink:href="/blogposts/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
