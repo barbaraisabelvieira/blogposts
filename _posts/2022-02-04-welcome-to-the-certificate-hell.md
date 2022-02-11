@@ -51,7 +51,7 @@ Let's consider an example. Let's say you're trying to connect to `google.com` us
 
 The browser will get the certificate and check if the certificate is indeed valid, i.e., the browser checks:
 1. If the CA digital signature of the certificate is valid (more about validity of digital signatures can be found [here](https://en.wikipedia.org/wiki/Digital_signature))
-2. If the certificate is indeed issued to `google.com`. This is a fundamental check and if the URL your trying to access doesn't match with the Common Name in the certificate (or is specified in the SAN fields), the certificate won't be validated by the browser. 
+2. If the certificate is indeed issued to `google.com`. This is a fundamental check and if the URL you're trying to access doesn't match with the Common Name in the certificate (or isn't specified in the SAN fields), the certificate won't be validated by the browser. 
 3. If the current date is within the range in which the certificate is valid.
 4. If the certificate has not been revoked by the CA. Revoked certificates must be completely discarded.
 5. That all the certificates in the **trust chain** of Google's certificate satisfy the properties above (i.e., the sub-CA certificate and the CA certificate itself are also validated in the same way) 
@@ -64,6 +64,7 @@ This list of trusted CAs either comes loaded in the browser (e.g.:Firefox) durin
 
 ![]({{site.baseurl}}/images/certificate-hell/secure-connections.jpg "Using certificates to enable secure connections")
 
+In any of the cases, all leaf certificates (i.e. end-user certificates) have a trust chain. The chain of trust of a certificate chain is just list of certificates, containing leaf certificate, the sub-CA certificates (a.k.a. intermediate CA certificates), and the root CA. PKI relies on a hierarchical chain of trust, so that the browsers only have to trust in a very few CA certificates.
 
 ## The role of digital certificates when setting up secure connections
 
@@ -71,7 +72,16 @@ This list of trusted CAs either comes loaded in the browser (e.g.:Firefox) durin
 
 ## Trusted Public-Key Infrastructure (PKI)
 
+## Main issues
 
+
+### What are truststores?
+
+### Issues derived from pinning certificates
+
+### Renewing certificates with old keys?
+
+### The PSD2 CAs 
 
 ## Further reading
 
