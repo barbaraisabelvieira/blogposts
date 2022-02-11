@@ -125,6 +125,14 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#the-role-of-digital-certificates-when-setting-up-secure-connections">The role of digital certificates when setting up secure connections</a></li>
 <li class="toc-entry toc-h2"><a href="#trusted-public-key-infrastructure-pki">Trusted Public-Key Infrastructure (PKI)</a></li>
+<li class="toc-entry toc-h2"><a href="#main-issues">Main issues</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#what-are-truststores">What are truststores?</a></li>
+<li class="toc-entry toc-h3"><a href="#issues-derived-from-pinning-certificates">Issues derived from pinning certificates</a></li>
+<li class="toc-entry toc-h3"><a href="#renewing-certificates-with-old-keys">Renewing certificates with old keys?</a></li>
+<li class="toc-entry toc-h3"><a href="#the-psd2-cas">The PSD2 CAs</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#further-reading">Further reading</a></li>
 </ul><p>Digital certificates, despite being of utmost importance these days, are always seen by many organizations as huge burden and more than often poorly managed. DevOps teams constantly struggle with properly managing digital certificates and most of the times set them up in insecure ways leading to leakage of certificate keys and consequently to insecure systems. 
 In this post I address the main issues present in certificate management. I address what some teams refer to as “certificate hell” and try to demystify some of the misconceptions associated to certificates lifecycle. 
@@ -182,7 +190,7 @@ So, when new certificate is validated by a trusted external party, the Certifica
 <p>The browser will get the certificate and check if the certificate is indeed valid, i.e., the browser checks:</p>
 <ol>
   <li>If the CA digital signature of the certificate is valid (more about validity of digital signatures can be found <a href="https://en.wikipedia.org/wiki/Digital_signature">here</a>)</li>
-  <li>If the certificate is indeed issued to <code class="language-plaintext highlighter-rouge">google.com</code>. This is a fundamental check and if the URL your trying to access doesn’t match with the Common Name in the certificate (or is specified in the SAN fields), the certificate won’t be validated by the browser.</li>
+  <li>If the certificate is indeed issued to <code class="language-plaintext highlighter-rouge">google.com</code>. This is a fundamental check and if the URL you’re trying to access doesn’t match with the Common Name in the certificate (or isn’t specified in the SAN fields), the certificate won’t be validated by the browser.</li>
   <li>If the current date is within the range in which the certificate is valid.</li>
   <li>If the certificate has not been revoked by the CA. Revoked certificates must be completely discarded.</li>
   <li>That all the certificates in the <strong>trust chain</strong> of Google’s certificate satisfy the properties above (i.e., the sub-CA certificate and the CA certificate itself are also validated in the same way)</li>
@@ -196,11 +204,28 @@ This list of trusted CAs either comes loaded in the browser (e.g.:Firefox) durin
 
 <p><img src="/blogposts/images/certificate-hell/secure-connections.jpg" alt="" title="Using certificates to enable secure connections"></p>
 
+<p>In any of the cases, all leaf certificates (i.e. end-user certificates) have a trust chain. The chain of trust of a certificate chain is just list of certificates, containing leaf certificate, the sub-CA certificates (a.k.a. intermediate CA certificates), and the root CA. PKI relies on a hierarchical chain of trust, so that the browsers only have to trust in a very few CA certificates.</p>
+
 <h2 id="the-role-of-digital-certificates-when-setting-up-secure-connections">
 <a class="anchor" href="#the-role-of-digital-certificates-when-setting-up-secure-connections" aria-hidden="true"><span class="octicon octicon-link"></span></a>The role of digital certificates when setting up secure connections</h2>
 
 <h2 id="trusted-public-key-infrastructure-pki">
 <a class="anchor" href="#trusted-public-key-infrastructure-pki" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trusted Public-Key Infrastructure (PKI)</h2>
+
+<h2 id="main-issues">
+<a class="anchor" href="#main-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main issues</h2>
+
+<h3 id="what-are-truststores">
+<a class="anchor" href="#what-are-truststores" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are truststores?</h3>
+
+<h3 id="issues-derived-from-pinning-certificates">
+<a class="anchor" href="#issues-derived-from-pinning-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues derived from pinning certificates</h3>
+
+<h3 id="renewing-certificates-with-old-keys">
+<a class="anchor" href="#renewing-certificates-with-old-keys" aria-hidden="true"><span class="octicon octicon-link"></span></a>Renewing certificates with old keys?</h3>
+
+<h3 id="the-psd2-cas">
+<a class="anchor" href="#the-psd2-cas" aria-hidden="true"><span class="octicon octicon-link"></span></a>The PSD2 CAs</h3>
 
 <h2 id="further-reading">
 <a class="anchor" href="#further-reading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further reading</h2>
