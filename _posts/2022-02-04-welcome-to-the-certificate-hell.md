@@ -83,6 +83,8 @@ In any of the cases, all leaf certificates (i.e. end-user certificates) have a t
 
 ### The PSD2 CAs 
 
+### God certificates 
+
 ## Further reading
 
 Podcast with Ryan Sleevi.
