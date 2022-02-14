@@ -30,13 +30,17 @@ Schrems II is definitely pulling back organisations digital transformations. It'
 
 
 Most European IT companies are currently migrating or have migrated their services and applications to US-based Cloud Service Providers (CSPs). US is one of the countries with problematic legislation with regards to data protection. So cloud native services of CSPs like Azure, AWS or GPC can become problematic when used to process personal data of European citizens. For instance, PaaS or SaaS services tend to be particularly troublesome, because privacy-friendly mitigations are often non-existent or very hard to implement. 
-Why is that? When using PaaS and SaaS services, the access management these services is managed by the CSP. This is because cloud services have been designed in this way. In fact, this roots from the security design principles: it's easier to manage, easier to maintain, and much more secure. Centralisation is considered in a security world a huge asset. Think about the Log4J issue. If all the 3rd party software dependencies were centrally managed in an organisation, it was much easier to recover of the Log4J hell-week where a new version of the library would come out every 2 days.     
+Why is that? When using PaaS and SaaS services, the access management these services is managed by the CSP. This is because cloud services have been designed in this way. In fact, this roots from the security design principles: it's easier to manage, easier to maintain, and much more secure. Centralisation is considered in a security world a huge asset. Think about the Log4J issue. If all the 3rd party software dependencies were centrally managed in an organisation, it was much easier to recover of the Log4J hell-week last Christmas.
+With regards to data protection in public cloud services, the CSP has normally full control over:     
+
+1. **Encryption keys** The key material used to protect the data (e.g.: encryption keys, certificate keys, etc.) is stored using native keystores provided of the CSP (e.g.: Azure Key Vault, AWS KMS). These keystores are under the full control of the CSP. More specifically in SaaS, the customer has no control over cryptographic key usage and key lifecycle management. 
+2. **IAM services** The CSP controls who has access to the data being processed by those services; PaaS and SaaS services natively integrate with the IAM services of the CSP (e.g.: Active Directory services). 
+
+These 2 main components are essential to protect data from unauthorized access. Either you prevent access to data through identity and access management services, or you encrypt the data and only allow accessing the keys those who are authorized to access the data. 
 
 
  For instance, 
 Control over data in transit -  TLS/SSL connections are fully management and controlled by the CSP in PaaS and SaaS. If no additional layer of encryption is added, services mostly rely on the (native) secure connections provided by the CSP to establish the communication. Since the CSP manages and controls the keys and certificates used to setup the connections, the CSP also has control on how the data in transit is protected and to whom is/can be disclosed.
-Control of encryption keys: The key material used to protect the data (e.g.: encryption keys, certificate keys, etc.) is stored using native keystores provided of the CSP (e.g.: Azure Key Vault, AWS KMS). These keystores are under the full control of the CSP. More specifically in SaaS, the customer has no control over cryptographic key usage and key lifecycle management. 
-Control of IAM services: The CSP controls who has access to the data being processed by those services; PaaS and SaaS services natively integrate with the IAM services of the CSP (e.g.: Active Directory services). 
 
 When the CSPs are under a problematic legislation, the data exporters (exporting data under GDPR legislation) cannot guarantee that the personal data being processed by these SaaS or PaaS services does not end up in the wrong hands (i.e., GDPR compliant). 
 The question is then:
