@@ -93,7 +93,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      8 min read
     
 </span></p>
 
@@ -116,38 +116,50 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#digital-certificates">Digital certificates</a>
+<li class="toc-entry toc-h1"><a href="#ii-small-introduction-to-digital-certificates">II. Small introduction to digital certificates</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#main-components-of-certificates">Main components of certificates</a></li>
-<li class="toc-entry toc-h3"><a href="#using-certificates-to-establish-secure-connections">Using certificates to establish secure connections</a></li>
-<li class="toc-entry toc-h3"><a href="#what-is-the-trust-chain">What is the trust-chain?</a></li>
+<li class="toc-entry toc-h2"><a href="#digital-certificates">Digital certificates</a></li>
+<li class="toc-entry toc-h2"><a href="#using-certificates-to-establish-secure-connections">Using certificates to establish secure connections</a></li>
+<li class="toc-entry toc-h2"><a href="#what-is-the-chain-of-trust">What is the chain of trust?</a></li>
+<li class="toc-entry toc-h2"><a href="#public-key-infrastructure-pki">Public-Key Infrastructure (PKI)</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#pki-history">PKI history</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#the-role-of-digital-certificates-when-setting-up-secure-connections">The role of digital certificates when setting up secure connections</a></li>
-<li class="toc-entry toc-h2"><a href="#trusted-public-key-infrastructure-pki">Trusted Public-Key Infrastructure (PKI)</a></li>
-<li class="toc-entry toc-h2"><a href="#main-issues">Main issues</a>
+<li class="toc-entry toc-h2"><a href="#truststores-and-keystores">Truststores and keystores</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#ii-why-managing-certificates-can-be-difficult">II. Why managing certificates can be difficult?</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#what-are-truststores">What are truststores?</a></li>
-<li class="toc-entry toc-h3"><a href="#issues-derived-from-pinning-certificates">Issues derived from pinning certificates</a></li>
-<li class="toc-entry toc-h3"><a href="#renewing-certificates-with-old-keys">Renewing certificates with old keys?</a></li>
+<li class="toc-entry toc-h2"><a href="#no-certificate-pki-governance">No certificate (PKI) governance</a></li>
+<li class="toc-entry toc-h2"><a href="#certificate-pinning---do-we-really-need-it">Certificate pinning - Do we really need it?</a></li>
+<li class="toc-entry toc-h2"><a href="#renewing-certificates-with-old-keys">Renewing certificates with old keys?</a>
+<ul>
 <li class="toc-entry toc-h3"><a href="#the-psd2-cas">The PSD2 CAs</a></li>
 <li class="toc-entry toc-h3"><a href="#god-certificates">God certificates</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#certificate-automation-and-acme">Certificate automation and ACME</a></li>
 <li class="toc-entry toc-h2"><a href="#further-reading">Further reading</a></li>
-</ul><p>Digital certificates, despite being of utmost importance these days, are always seen by many organizations as huge burden and more than often poorly managed. DevOps teams constantly struggle with properly managing digital certificates and most of the times set them up in insecure ways leading to leakage of certificate keys and consequently to insecure systems. 
-In this post I address the main issues present in certificate management. I address what some teams refer to as “certificate hell” and try to demystify some of the misconceptions associated to certificates lifecycle. 
-In fact I advocate that certificates are in reality simple to understand and easy to manage, as long as you know a thing or two about how trusted Public Key Infrastructure (PKIs) work.</p>
+</ul>
+</li>
+</ul><p>Digital certificates, despite being of utmost importance these days, are always seen by many organizations as huge burden and more than often poorly managed. DevOps teams constantly struggle with properly managing digital certificates and most of the times, these are set up in insecure ways, leading to leakage of certificate keys and consequently to insecure systems. 
+In this post I address the main issues present in certificate management.</p>
 
-<p>Please note that through this post I’ll refer to digital certificates simply as certificates.</p>
+<p><em>
+The name of this post has a funny story. Some time ago, I was in a meeting with a couple of development teams where the goal was trying to solve problems inherent to integration of APIs. Since APIs do need to be secure, the certificates topic unavoidably came up. After a while, people got stuck in a certificate management problem and suddenly someone says out laud: “Welcome to the certificate hell!”. I couldn’t stop smiling in light of such a statement, but obviously this reflects what most people feel about PKI management. Managing certificates can be so painful in practice that most people avoid it, completely. So I guess this post is trying to demystify some of the misconceptions inherent to this topic, as well as, creating some awareness to some of the most common obstacles and burdens that arise from managing certificates.   <br>
+</em></p>
+
+<h1 id="ii-small-introduction-to-digital-certificates">
+<a class="anchor" href="#ii-small-introduction-to-digital-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>II. Small introduction to digital certificates</h1>
+
+<p>If you know what a certificate and for which purposes it can be used, skip this part.</p>
 
 <h2 id="digital-certificates">
 <a class="anchor" href="#digital-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Digital certificates</h2>
 
-<p>A Digital Certificate is a piece of data that typically attests that a certain (private) key is owned by a specific entity. Digital certificates are used everywhere across the entire internet and they enable the trust-chain that allows the, somewhat hassle-free setup, of secure communications. Digital certificates can also be used in other context, like enable digital signatures, but their main goal is to uniquely and undoubtedly identify an internet service or entity.</p>
-
-<h3 id="main-components-of-certificates">
-<a class="anchor" href="#main-components-of-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main components of certificates</h3>
+<p>A Digital Certificate is a piece of data that typically attests that a certain (private) key is owned by a specific entity. Digital certificates are used everywhere across the entire internet and they enable the trust-chain that allows the, somewhat hassle-free setup, of secure communications. Digital certificates can also be used in other context, like enable digital signatures, but their main goal is to uniquely and undoubtedly identify an internet service or entity. 
+Please note that through this post I’ll refer to digital certificates simply as certificates.</p>
 
 <p><img src="/blogposts/images/certificate-hell/digital-certificate.jpg" alt="" title="Main components of a digital certificate"></p>
 
@@ -163,7 +175,7 @@ In fact I advocate that certificates are in reality simple to understand and eas
 <strong>Signature of the Certification Authority (CA)</strong> - a digital signature of a known and trusted CA attesting that all the information present in the certificate is indeed valid and has validated by the CA</li>
 </ol>
 
-<p><img src="/blogposts/images/certificate-hell/google-certificate.png" alt="" title=" " height="450px" with="300px" style="float: right">
+<p><img src="/blogposts/images/certificate-hell/google-certificate.png" alt="" title=" " height="350px" with="250px"> <!-- style="float: right"} -->
 For instance, if you consider the google.com certificate (on the right side):</p>
 <ol>
   <li>
@@ -178,13 +190,13 @@ For instance, if you consider the google.com certificate (on the right side):</p
 </li>
 </ol>
 
-<h3 id="using-certificates-to-establish-secure-connections">
-<a class="anchor" href="#using-certificates-to-establish-secure-connections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using certificates to establish secure connections</h3>
+<h2 id="using-certificates-to-establish-secure-connections">
+<a class="anchor" href="#using-certificates-to-establish-secure-connections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using certificates to establish secure connections</h2>
 
 <p>Why is this information so important? As stated in the beginning, the goal of the certificate is to identify the owner of a particular private key associated to the public key in the certificate. 
-So, when new certificate is validated by a trusted external party, the Certification Authority (CA), this means that the CA attests that entity <code class="language-plaintext highlighter-rouge">A</code> is the owner of the public/private key pair <code class="language-plaintext highlighter-rouge">(PubK, PrivK)</code>. Therefore, when the key pair is used in the context of establishing a secure communication, one can trust that the server to which they are connecting to is indeed who it says it is.</p>
+So, when a new certificate is validated by a trusted external party, the Certification Authority (CA), this means that the CA attests that entity <code class="language-plaintext highlighter-rouge">A</code> is the owner of the public/private key pair <code class="language-plaintext highlighter-rouge">(PubK, PrivK)</code>. Therefore, when the key pair is used in the context of establishing a secure communication, one can trust that the server to which they are connecting to is indeed who it says it is.</p>
 
-<p>Let’s consider an example. Let’s say you’re trying to connect to <code class="language-plaintext highlighter-rouge">google.com</code> using your browser. Your browser will to a <code class="language-plaintext highlighter-rouge">GET</code> request to <code class="language-plaintext highlighter-rouge">google.com</code> and the Google server will reply with the certificate and a set of parameters. This only happens, because by default Google only accepts secure connections.</p>
+<p>Let’s consider an example. Let’s say you’re trying to connect to <code class="language-plaintext highlighter-rouge">google.com</code> using your browser. Your browser will do a <code class="language-plaintext highlighter-rouge">GET</code> request to <code class="language-plaintext highlighter-rouge">google.com</code> and the Google server will reply with the certificate and a set of parameters. This only happens, because by default Google only accepts secure connections.</p>
 
 <p><img src="/blogposts/images/certificate-hell/eg-secure-connections.jpg" alt="" title="E.g.: Using certificates to enable secure connections"></p>
 
@@ -194,42 +206,77 @@ So, when new certificate is validated by a trusted external party, the Certifica
   <li>If the certificate is indeed issued to <code class="language-plaintext highlighter-rouge">google.com</code>. This is a fundamental check and if the URL you’re trying to access doesn’t match with the Common Name in the certificate (or isn’t specified in the SAN fields), the certificate won’t be validated by the browser.</li>
   <li>If the current date is within the range in which the certificate is valid.</li>
   <li>If the certificate has not been revoked by the CA. Revoked certificates must be completely discarded.</li>
-  <li>That all the certificates in the <strong>trust chain</strong> of Google’s certificate satisfy the properties above (i.e., the sub-CA certificate and the CA certificate itself are also validated in the same way)</li>
+  <li>If all the certificates in the <strong>trust chain</strong> of Google’s certificate satisfy the properties above (i.e., the sub-CA certificate and the CA certificate itself are also validated in the same way)</li>
 </ol>
 
-<h3 id="what-is-the-trust-chain">
-<a class="anchor" href="#what-is-the-trust-chain" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is the trust-chain?</h3>
+<h2 id="what-is-the-chain-of-trust">
+<a class="anchor" href="#what-is-the-chain-of-trust" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is the chain of trust?</h2>
 
 <p>When the browser validates the CA certificate, it needs to do all the checks above. However, since CA certificates are self-signed, in order to validate the signature present in the CA certificate, the browser ultimately needs to check if the CA is listed in the list of trusted CAs. 
-This list of trusted CAs either comes loaded in the browser (e.g.:Firefox) during installation time, or corresponds to the same list of trusted CAs of Operating System (OS) where the browser is running at (e.g.: Safari).</p>
+This list of trusted CAs either comes loaded in the browser (e.g.: Firefox) during installation time, or corresponds to the same list of trusted CAs of Operating System (OS) where the browser is running at (e.g.: Safari).</p>
 
 <p><img src="/blogposts/images/certificate-hell/secure-connections.jpg" alt="" title="Using certificates to enable secure connections"></p>
 
-<p>In any of the cases, all leaf certificates (i.e. end-user certificates) have a trust chain. The chain of trust of a certificate chain is just list of certificates, containing leaf certificate, the sub-CA certificates (a.k.a. intermediate CA certificates), and the root CA. PKI relies on a hierarchical chain of trust, so that the browsers only have to trust in a very few CA certificates.</p>
+<p>In any of the cases, all leaf certificates (i.e. end-user certificates) have a trust chain. The chain of trust of a certificate is just list of certificates, containing the leaf certificate, the sub-CA certificates (a.k.a. intermediate CA certificates), and the root CA. PKI relies on a hierarchical chain of trust, so that the browsers only have to trust in a very few CA certificates (between 50 and 70 CA certificates in total).</p>
 
-<h2 id="the-role-of-digital-certificates-when-setting-up-secure-connections">
-<a class="anchor" href="#the-role-of-digital-certificates-when-setting-up-secure-connections" aria-hidden="true"><span class="octicon octicon-link"></span></a>The role of digital certificates when setting up secure connections</h2>
+<p>Certificates can also be used to validate digital signatures. In this case, the validation process of the certificate is the same as the one described above.</p>
 
-<h2 id="trusted-public-key-infrastructure-pki">
-<a class="anchor" href="#trusted-public-key-infrastructure-pki" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trusted Public-Key Infrastructure (PKI)</h2>
+<h2 id="public-key-infrastructure-pki">
+<a class="anchor" href="#public-key-infrastructure-pki" aria-hidden="true"><span class="octicon octicon-link"></span></a>Public-Key Infrastructure (PKI)</h2>
 
-<h2 id="main-issues">
-<a class="anchor" href="#main-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main issues</h2>
+<p>In order for all of this to work properly, what is called a <a href="https://en.wikipedia.org/wiki/Public_key_infrastructure">Public Key Infrastructure (PKI)</a> needs to be in place. PKI is then:</p>
+<ol>
+  <li>Everything that relates to managing the lifecycle of certificates (creation, renewal, revocation, deletion, etc.);</li>
+  <li>The hardware and software used to handle and store the certificates and</li>
+  <li>The governance framework that allows managing it, including policies, standards, roles, etc.</li>
+</ol>
 
-<h3 id="what-are-truststores">
-<a class="anchor" href="#what-are-truststores" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are truststores?</h3>
+<p>Without a proper governance framework to manage the certificates lifecycle, the WebPKI in place these days wouldn’t provide the same level o security as we’re used to.
+Please note that the web as we know it these days fully relies on the trust placed on how the certificates are managed. Managing certificates properly is therefore of utmost importance.</p>
 
-<h3 id="issues-derived-from-pinning-certificates">
-<a class="anchor" href="#issues-derived-from-pinning-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues derived from pinning certificates</h3>
+<h5 id="pki-history">
+<a class="anchor" href="#pki-history" aria-hidden="true"><span class="octicon octicon-link"></span></a>PKI history</h5>
+<p>If you want to know the history of the webPKI, there’s a great talk from Ryan Sleevi that I’d advise you to watch. You can find the link <a href="https://www.youtube.com/watch?v=fazq0v-ySCo&amp;t=1962s&amp;ab_channel=IETF-InternetEngineeringTaskForce">here</a>. Although the talk is mainly focused in the webPKI, it gives a great overview of how PKIs have evolved through time.</p>
 
-<h3 id="renewing-certificates-with-old-keys">
-<a class="anchor" href="#renewing-certificates-with-old-keys" aria-hidden="true"><span class="octicon octicon-link"></span></a>Renewing certificates with old keys?</h3>
+<h2 id="truststores-and-keystores">
+<a class="anchor" href="#truststores-and-keystores" aria-hidden="true"><span class="octicon octicon-link"></span></a>Truststores and keystores</h2>
+<p>TODO</p>
+
+<h1 id="ii-why-managing-certificates-can-be-difficult">
+<a class="anchor" href="#ii-why-managing-certificates-can-be-difficult" aria-hidden="true"><span class="octicon octicon-link"></span></a>II. Why managing certificates can be difficult?</h1>
+
+<p>Ok, so now that we know what a certificate is and which purpose it serves, let’s see why people consider certificate management to be a hell of job.</p>
+
+<h2 id="no-certificate-pki-governance">
+<a class="anchor" href="#no-certificate-pki-governance" aria-hidden="true"><span class="octicon octicon-link"></span></a>No certificate (PKI) governance</h2>
+<p>Most IT organisations using certificates, do not implement any certificate governance. This is either because of:</p>
+<ol>
+  <li>the dimension of the company, i.e., small companies will not invest time or money in certificates. These companies will most likely rely on LetsEncrypt certificates for any external facing service.</li>
+  <li>maturity of the organisation with regards to security - companies with low security maturity are not aware of certificate management inherent issues and requirements.</li>
+</ol>
+
+<p>But, does certificate governance matter so much? Yes it does. Most of the security problems that result from certificate handling are due to poor governance practices. 
+If your organisation doesn’t have in place the policies, standards and procedures to manage certificates, it means it doesn’t have any PKI and you shouldn’t expect it to be managed in a secure way. Certificates governance is fundamental, otherwise your organisation ends up with certificates issued by a multitude of CAs, with certificates that are too permissive (see below what I call God Certificates), or even worse, with certificates with leaked (private) keys, that were never revoked.</p>
+
+<p>Beware that this whole thing can be very expensive to maintain. CA’s are expensive, hiring PKI experts to manage internal PKIs is hard and costly, certificate management always comes holding hands with domain management, which is in itself another hard topic to manage, etc.</p>
+
+<h2 id="certificate-pinning---do-we-really-need-it">
+<a class="anchor" href="#certificate-pinning---do-we-really-need-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certificate pinning - Do we really need it?</h2>
+<p>Main issues derived from pinning?</p>
+
+<h2 id="renewing-certificates-with-old-keys">
+<a class="anchor" href="#renewing-certificates-with-old-keys" aria-hidden="true"><span class="octicon octicon-link"></span></a>Renewing certificates with old keys?</h2>
 
 <h3 id="the-psd2-cas">
 <a class="anchor" href="#the-psd2-cas" aria-hidden="true"><span class="octicon octicon-link"></span></a>The PSD2 CAs</h3>
 
 <h3 id="god-certificates">
 <a class="anchor" href="#god-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>God certificates</h3>
+
+<h2 id="certificate-automation-and-acme">
+<a class="anchor" href="#certificate-automation-and-acme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certificate automation and ACME</h2>
+<p>Automatic Certificate Management Environment (ACME) is a JSON-based protocol developed by the Internet Security Research Group (which developed Let’s Encrypt). ACME was developed to automate issuing of certificates. Although major certification authorities support ACME, they also support other forms of certificate automation that tends to integrate directly with major (public) could providers. Also, 
+the most popular web servers, proxy servers or load balancers natively support ACME as well, which enables automated certificate renewal.</p>
 
 <h2 id="further-reading">
 <a class="anchor" href="#further-reading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further reading</h2>
