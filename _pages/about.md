@@ -7,7 +7,7 @@ image: images/profile/profile-picture.jpeg
 
 ![]({{ site.baseurl  }}/images/profile/profile-picture.jpeg){: style="float: right" height="180px" with="180px"}
 
-Working as a Security engineer or Cryptography consultant somewhere in the world. 
+I usually work as a Security engineer or Cryptography consultant somewhere in the world. 
 
 I love software, application security, applied crypto(graphy) and privacy engineering. 
 
