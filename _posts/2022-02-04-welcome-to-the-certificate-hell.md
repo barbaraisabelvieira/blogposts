@@ -5,7 +5,7 @@ description: Managing digital certificates in the real world.
 categories: [digital-certificates,cryptography,encryption]
 title: Welcome to the Certificate Hell! 
 image: images/n-a.jpg
-hide: false #hiding blog post for now 
+hide: true #hiding blog post for now 
 search_exclude: false
 ---
 
