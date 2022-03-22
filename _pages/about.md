@@ -18,4 +18,4 @@ I hate when people tell me I'm not capable of something.
 
 ---
 
-<sub>If you'd like to get in contact, just drop me an email: <barbaraisabelvieira@gmail.com> </sub>
+<!-- <sub>If you'd like to get in contact, just drop me an email: <barbaraisabelvieira@gmail.com> </sub> -->
