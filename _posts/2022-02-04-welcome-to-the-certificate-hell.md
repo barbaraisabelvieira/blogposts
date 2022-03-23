@@ -9,8 +9,8 @@ hide: true #hiding blog post for now
 search_exclude: false
 ---
 
-Digital certificates, despite being of utmost importance these days, are always seen by many organizations as huge burden and more than often poorly managed. DevOps teams constantly struggle with properly managing digital certificates and most of the times, these are set up in insecure ways, leading to leakage of certificate keys and consequently to insecure systems. 
-In this post I address the main issues present in certificate management.
+Digital certificates are always seen as huge burden and more than often poorly managed. DevOps teams constantly struggle with properly managing digital certificates and most of the times, these are set up in insecure ways, leading to compromised certificate keys and consequently to insecure systems. 
+<!-- In this post I address the main issues present in certificate management. -->
 
 <em>
 The name of this post has a funny story. Some time ago, I was in a meeting with a couple of development teams where the goal was trying to solve problems inherent to integration of APIs. Since APIs do need to be secure, the certificates topic unavoidably came up. After a while, people got stuck in a certificate management problem and suddenly someone says out laud: "Welcome to the certificate hell!". I couldn't stop smiling in light of such a statement, but obviously this reflects what most people feel about PKI management. Managing certificates can be so painful in practice that most people avoid it, completely. So I guess this post is trying to demystify some of the misconceptions inherent to this topic, as well as, creating some awareness to some of the most common obstacles and burdens that arise from managing certificates.     
@@ -22,8 +22,7 @@ If you know what a certificate and for which purposes it can be used, skip this 
 
 ## Digital certificates 
 
-A Digital Certificate is a piece of data that typically attests that a certain (private) key is owned by a specific entity. Digital certificates are used everywhere across the entire internet and they enable the trust-chain that allows the, somewhat hassle-free setup, of secure communications. Digital certificates can also be used in other context, like enable digital signatures, but their main goal is to uniquely and undoubtedly identify an internet service or entity. 
-Please note that through this post I'll refer to digital certificates simply as certificates.
+A Digital Certificate is a piece of data that typically attests that a certain (private) key is owned (and controlled by) by a specific entity. Digital certificates are used everywhere across the entire internet and they enable the trust-chain that allows the, somewhat hassle-free setup, of secure communications. Digital certificates can also be used in other context, like enabling digital signatures, but their main goal is to uniquely and undoubtedly identify an internet service or entity. Please note that through this post I'll refer to digital certificates simply as certificates.
 
 
 ![]({{ site.baseurl}}/images/certificate-hell/digital-certificate.jpg "Main components of a digital certificate")
@@ -67,9 +66,9 @@ This list of trusted CAs either comes loaded in the browser (e.g.: Firefox) duri
 
 ![]({{site.baseurl}}/images/certificate-hell/secure-connections.jpg "Using certificates to enable secure connections")
 
-In any of the cases, all leaf certificates (i.e. end-user certificates) have a trust chain. The chain of trust of a certificate is just list of certificates, containing the leaf certificate, the sub-CA certificates (a.k.a. intermediate CA certificates), and the root CA. PKI relies on a hierarchical chain of trust, so that the browsers only have to trust in a very few CA certificates (between 50 and 70 CA certificates in total).
+In any of the cases, all leaf certificates (i.e. end-user certificates) have a trust chain. The chain of trust of a certificate is just list of certificates, containing the leaf certificate, the sub-CA certificates (a.k.a. intermediate CA certificates), and the root CA. PKI relies on a hierarchical chain of trust, so that the browsers only have to trust in a very few CA certificates worldwide (between 50 and 70 CA certificates in total).
 
-Certificates can also be used to validate digital signatures. In this case, the validation process of the certificate is the same as the one described above.
+Certificates can also be used to validate digital signatures. In this case, the validation process of the certificate itself, is the same as the one described above.
 
 
 ## Public-Key Infrastructure (PKI)
@@ -121,5 +120,5 @@ the most popular web servers, proxy servers or load balancers natively support A
  
 ## Further reading
 
-Podcast with Ryan Sleevi.
+Podcast with Ryan Sleevi from Security, Cryptography, Whatever... [LINK](TODO).
 
