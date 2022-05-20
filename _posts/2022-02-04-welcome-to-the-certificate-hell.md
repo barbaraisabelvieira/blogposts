@@ -117,6 +117,9 @@ Main issues derived from pinning?
 ## Certificate automation and ACME
 Automatic Certificate Management Environment (ACME) is a JSON-based protocol developed by the Internet Security Research Group (which developed Let's Encrypt). ACME was developed to automate issuing of certificates. Although major certification authorities support ACME, they also support other forms of certificate automation that tends to integrate directly with major (public) could providers. Also, 
 the most popular web servers, proxy servers or load balancers natively support ACME as well, which enables automated certificate renewal. 
+
+## Truststores and chain of trust
+How important is the integrity of the truststores?
  
 ## Further reading
 
