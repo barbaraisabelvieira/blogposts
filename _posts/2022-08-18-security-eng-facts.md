@@ -86,7 +86,7 @@ Be assured that every day we try to make your system a little bit more secure. T
 
 # Additional remarks
 
-As usual this blog post reveals my perspective and experience through out the years. It tries to give you the perspective of a security engineer, but that doesn't mean all security engineers behave in the same way. 
+As usual this blog post reveals my perspective and experience through out the years. It tries to give the perspective of a security engineer, but that doesn't mean all security engineers think or behave in the same way. 
 
 
 
