@@ -12,6 +12,7 @@ search_exclude: true
 # Introduction 
 An honest intruduction to the Security Engineer career. If you have to deal with security engineers everyday and you don't know how, maybe this blog post will help to understand how we think. If you're interested in becoming a security engineer, I hope this blog post can inspire you to follow that path. In any case, I hope you have fun reading it! 
 
+![]({{ site.baseurl}}/images/keep-calm-sec-eng.png ){: height="450px" with="350px"}
 
 
 # Thirteen facts about Security Engineers
@@ -85,7 +86,7 @@ Be assured that every day we try to make your system a little bit more secure. T
 
 # Additional remarks
 
-As usual this blog post reveals my perspective and experience through out the years. It tries to give you the perspective of a security engineer, but that doesn't mean all security engineers behave in the same way. 
+As usual this blog post reveals my perspective and experience through out the years. It tries to give the perspective of a security engineer, but that doesn't mean all security engineers think or behave in the same way. 
 
 
 
