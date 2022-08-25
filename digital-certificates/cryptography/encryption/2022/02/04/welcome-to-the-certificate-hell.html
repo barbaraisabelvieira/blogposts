@@ -131,16 +131,14 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h1"><a href="#ii-why-managing-certificates-can-be-difficult">II. Why managing certificates can be difficult?</a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#no-certificate-pki-governance">No certificate (PKI) governance</a></li>
+<li class="toc-entry toc-h2"><a href="#no-governance">No Governance!</a></li>
 <li class="toc-entry toc-h2"><a href="#certificate-pinning---do-we-really-need-it">Certificate pinning - Do we really need it?</a></li>
-<li class="toc-entry toc-h2"><a href="#renewing-certificates-with-old-keys">Renewing certificates with old keys?</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#the-psd2-cas">The PSD2 CAs</a></li>
-<li class="toc-entry toc-h3"><a href="#god-certificates">God certificates</a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#renewing-certificates-with-old-keys">Renewing certificates with old keys?</a></li>
+<li class="toc-entry toc-h2"><a href="#the-psd2-cas">The PSD2 CAs</a></li>
+<li class="toc-entry toc-h2"><a href="#god-certificates">God certificates</a></li>
 <li class="toc-entry toc-h2"><a href="#certificate-automation-and-acme">Certificate automation and ACME</a></li>
 <li class="toc-entry toc-h2"><a href="#truststores-and-chain-of-trust">Truststores and chain of trust</a></li>
+<li class="toc-entry toc-h2"><a href="#pki-and-containers">PKI and Containers</a></li>
 <li class="toc-entry toc-h2"><a href="#further-reading">Further reading</a></li>
 </ul>
 </li>
@@ -247,8 +245,8 @@ Please note that the web as we know it these days fully relies on the trust plac
 
 <p>Ok, so now that we know what a certificate is and which purpose it serves, let’s see why people consider certificate management to be a hell of job.</p>
 
-<h2 id="no-certificate-pki-governance">
-<a class="anchor" href="#no-certificate-pki-governance" aria-hidden="true"><span class="octicon octicon-link"></span></a>No certificate (PKI) governance</h2>
+<h2 id="no-governance">
+<a class="anchor" href="#no-governance" aria-hidden="true"><span class="octicon octicon-link"></span></a>No Governance!</h2>
 <p>Most IT organisations using certificates, do not implement any certificate governance. This is either because of:</p>
 <ol>
   <li>the dimension of the company, i.e., small companies will not invest time or money in certificates. These companies will most likely rely on LetsEncrypt certificates for any external facing service.</li>
@@ -267,11 +265,12 @@ If your organisation doesn’t have in place the policies, standards and procedu
 <h2 id="renewing-certificates-with-old-keys">
 <a class="anchor" href="#renewing-certificates-with-old-keys" aria-hidden="true"><span class="octicon octicon-link"></span></a>Renewing certificates with old keys?</h2>
 
-<h3 id="the-psd2-cas">
-<a class="anchor" href="#the-psd2-cas" aria-hidden="true"><span class="octicon octicon-link"></span></a>The PSD2 CAs</h3>
+<h2 id="the-psd2-cas">
+<a class="anchor" href="#the-psd2-cas" aria-hidden="true"><span class="octicon octicon-link"></span></a>The PSD2 CAs</h2>
 
-<h3 id="god-certificates">
-<a class="anchor" href="#god-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>God certificates</h3>
+<h2 id="god-certificates">
+<a class="anchor" href="#god-certificates" aria-hidden="true"><span class="octicon octicon-link"></span></a>God certificates</h2>
+<p>Have you ever seen a certificate with so many SAN fields that you could already guess that particular certificate is the only certificate used for entire company domains? Moreover, have you inspect those SAN fields? When these SAN fields are full of wildcards, this becomes such a powerful certificate, that I used to call them <strong>God Certificates</strong>.</p>
 
 <h2 id="certificate-automation-and-acme">
 <a class="anchor" href="#certificate-automation-and-acme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certificate automation and ACME</h2>
@@ -281,6 +280,9 @@ the most popular web servers, proxy servers or load balancers natively support A
 <h2 id="truststores-and-chain-of-trust">
 <a class="anchor" href="#truststores-and-chain-of-trust" aria-hidden="true"><span class="octicon octicon-link"></span></a>Truststores and chain of trust</h2>
 <p>How important is the integrity of the truststores?</p>
+
+<h2 id="pki-and-containers">
+<a class="anchor" href="#pki-and-containers" aria-hidden="true"><span class="octicon octicon-link"></span></a>PKI and Containers</h2>
 
 <h2 id="further-reading">
 <a class="anchor" href="#further-reading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further reading</h2>
