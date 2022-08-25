@@ -2,9 +2,9 @@
 toc: true
 layout: post
 description: Thirteen facts about Security Engineers
-categories: [Security,Engineer,Facts, Career ]
+categories: [Security,Engineer,Facts,Career]
 title: Keep Calm, I'm a Security Engineer 
-image: images/keep-calm-sec-eng.png
+image: /images/security-engineering/keep-calm-sec-eng.png
 hide: false
 search_exclude: true
 ---
@@ -13,7 +13,7 @@ search_exclude: true
 An honest intruduction to the Security Engineer career. If you have to deal with security engineers everyday and you don't know how, maybe this blog post will help to understand how we think. If you're interested in becoming a security engineer, I hope this blog post can inspire you to follow that path. In any case, I hope you have fun reading it! 
 
 
-![]({{ site.baseurl}}/images/security-engineering/keep-calm-sec-eng.png ){: height="450px" with="350px"}
+![]({{ site.baseurl}}/images/security-engineering/keep-calm-sec-eng.png ){: height="350px" with="300px"}
 
 
 # Thirteen facts about Security Engineers
