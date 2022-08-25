@@ -94,7 +94,7 @@ TODO
 Ok, so now that we know what a certificate is and which purpose it serves, let's see why people consider certificate management to be a hell of job.
 
 
-## No certificate (PKI) governance 
+## No Governance!  
 Most IT organisations using certificates, do not implement any certificate governance. This is either because of: 
 1. the dimension of the company, i.e., small companies will not invest time or money in certificates. These companies will most likely rely on LetsEncrypt certificates for any external facing service. 
 2. maturity of the organisation with regards to security - companies with low security maturity are not aware of certificate management inherent issues and requirements.
@@ -110,9 +110,10 @@ Main issues derived from pinning?
 
 ## Renewing certificates with old keys?
 
-### The PSD2 CAs 
+## The PSD2 CAs 
 
-### God certificates 
+## God certificates 
+Have you ever seen a certificate with so many SAN fields that you could already guess that particular certificate is the only certificate used for entire company domains? Moreover, have you inspect those SAN fields? When these SAN fields are full of wildcards, this becomes such a powerful certificate, that I used to call them **God Certificates**.
 
 ## Certificate automation and ACME
 Automatic Certificate Management Environment (ACME) is a JSON-based protocol developed by the Internet Security Research Group (which developed Let's Encrypt). ACME was developed to automate issuing of certificates. Although major certification authorities support ACME, they also support other forms of certificate automation that tends to integrate directly with major (public) could providers. Also, 
@@ -120,6 +121,8 @@ the most popular web servers, proxy servers or load balancers natively support A
 
 ## Truststores and chain of trust
 How important is the integrity of the truststores?
+
+## PKI and Containers 
  
 ## Further reading
 
