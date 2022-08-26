@@ -9,10 +9,10 @@ hide: false
 search_exclude: true
 ---
 
+![]({{ site.baseurl}}/images/security-engineering/keep-calm-sec-eng.PNG ){: height="450px" with="350px"}
+
 # Introduction 
 This blog gives an introduction to the Security Engineer career profile by stating some general facts about Security Engineers. If you work closely with a security engineer everyday, perhaps you'll find some funny facts in this blog post that you can relate to and may help you understand how we think. Additionally, if you're interested in becoming a security engineer, I hope this blog post can inspire you to follow that path. In any case, I hope you have fun reading it!
-
-![]({{ site.baseurl}}/images/security-engineering/keep-calm-sec-eng.PNG ){: height="450px" with="350px"}
 
 
 # Thirteen facts about Security Engineers
